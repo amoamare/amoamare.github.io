@@ -5,7 +5,7 @@ permalink: /introduction/
 ---
 
 
-#PlayStation 5 Troubleshooting
+# PlayStation 5 Troubleshooting
 
 ## Introduction
 Place holder.
