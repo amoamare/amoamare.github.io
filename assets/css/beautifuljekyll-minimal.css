@@ -17,7 +17,7 @@ table span{
 }
 
 table {
-  display: block;
+  display: table;
   width: 100%;
   border-collapse: collapse;
   overflow: auto;
