@@ -11,3 +11,195 @@ footer.footer-min {
   border-top: 1px solid #eeeeee;
   text-align: center;
 }
+
+
+.cell .lang {
+  position: absolute;
+  bottom: 0;
+  right: 0
+}
+
+/*! File: Shared/tables.less */
+table {
+  max-width: 2;
+  ba;background-color: transparent;
+  rder-collapse: collapse;
+  border-spacing: 0;
+}
+
+table th {
+  text-align: left
+}
+
+.table {
+  /* width:100%; */
+  /* margin-bottom:18px; */
+}
+
+.table td,.table th {
+  padding: 8px;
+  line-height: 18px;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #e5e7eb
+}
+
+.table th {
+  font-weight: 700
+}
+
+.table thead th {
+  vertical-align: bottom
+}
+
+.table caption {
+  text-align: left;
+  text-align: start;
+  font-size: 14px
+}
+
+.table caption+thead tr:first-child td,.table caption+thead tr:first-child th,.table colgroup+thead tr:first-child td,.table colgroup+thead tr:first-child th,.table thead:first-child tr:first-child td,.table thead:first-child tr:first-child th {
+  border-top: 0
+}
+
+.table tbody+tbody {
+  border-top: 2px solid #e5e7eb
+}
+
+.table td.center,.table th.center {
+  text-align: center
+}
+
+.table td.align-right,.table th.align-right {
+  text-align: right
+}
+
+.table td.number,.table th.number {
+  text-align: right
+}
+
+.table-responsive {
+  overflow-x: auto
+}
+
+@media only screen and (max-width: 575px) {
+  .table-responsive {
+      width:100%;
+      overflow-y: hidden;
+      border: 1px solid #e5e7eb
+  }
+
+  .table-responsive .table {
+      padding: 3px 6px
+  }
+}
+
+.table-condensed td,.table-condensed th {
+  padding: 4px 5px
+}
+
+.table-bordered {
+  border: 1px solid #e5e7eb;
+  /* border-collapse:separate; */
+  border-left: 0;
+  /* border-radius:4px; */
+}
+
+.table-bordered.table-bordered-square {
+  border-radius: 0
+}
+
+.table-bordered td,.table-bordered th {
+  border-left: 1px solid #e5e7eb
+}
+
+.table-bordered caption+tbody tr:first-child td,.table-bordered caption+tbody tr:first-child th,.table-bordered caption+thead tr:first-child th,.table-bordered colgroup+tbody tr:first-child td,.table-bordered colgroup+tbody tr:first-child th,.table-bordered colgroup+thead tr:first-child th,.table-bordered tbody:first-child tr:first-child td,.table-bordered tbody:first-child tr:first-child th,.table-bordered thead:first-child tr:first-child th {
+  border-top: 0
+}
+
+.table-bordered tbody:first-child tr:first-child td:first-child,.table-bordered thead:first-child tr:first-child th:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px
+}
+
+.table-bordered tbody:first-child tr:first-child td:last-child,.table-bordered thead:first-child tr:first-child th:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px
+}
+
+.table-bordered tbody:last-child tr:last-child td:first-child,.table-bordered tfoot:last-child tr:last-child td:first-child,.table-bordered thead:last-child tr:last-child th:first-child {
+  border-radius: 0 0 0 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px
+}
+
+.table-bordered tbody:last-child tr:last-child td:last-child,.table-bordered tfoot:last-child tr:last-child td:last-child,.table-bordered thead:last-child tr:last-child th:last-child {
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px
+}
+
+.table-bordered caption+tbody tr:first-child td:first-child,.table-bordered caption+thead tr:first-child th:first-child,.table-bordered colgroup+tbody tr:first-child td:first-child,.table-bordered colgroup+thead tr:first-child th:first-child {
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px
+}
+
+.table-bordered caption+tbody tr:first-child td:last-child,.table-bordered caption+thead tr:first-child th:last-child,.table-bordered colgroup+tbody tr:first-child td:last-child,.table-bordered colgroup+thead tr:first-child th:last-child {
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px
+}
+
+.table-header-accented th {
+  background-color: #f9fafb
+}
+
+.table-striped tbody tr:nth-child(odd) td,.table-striped tbody tr:nth-child(odd) th {
+  background-color: #f9fafb
+}
+
+.table-hover tbody tr:hover td,.table-hover tbody tr:hover th {
+  background-color: #f9fafb
+}
+
+table [class*=span] {
+  display: table-cell;
+  float: none;
+  margin-left: 0
+}
+
+.table tbody tr.success td {
+  background-color: #e9f9ef
+}
+
+.table tbody tr.error td {
+  background-color: #fdecec
+}
+
+.table tbody tr.warning td {
+  background-color: #fdf7e6
+}
+
+.table tbody tr.info td {
+  background-color: #f9fafb
+}
+
+.table-hover tbody tr.success:hover td {
+  background-color: #d5f4e0
+}
+
+.table-hover tbody tr.error:hover td {
+  background-color: #fbd5d5
+}
+
+.table-hover tbody tr.warning:hover td {
+  background-color: #fbf0cf
+}
+
+.table-hover tbody tr.info:hover td {
+  background-color: #eaedf1
+}
