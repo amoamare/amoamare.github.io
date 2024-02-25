@@ -14,17 +14,8 @@ layout: base
           {% endfor %}
         </div>
       {% endif %}
-       
-      {% if page.hasMermaid %}
-      <pre class="mermaid">
-        {{- .Inner -}}
-      </pre>
-      <pre class="mermaid" tag="not inner">
-        {{ content }}
-      </pre>
-      {% else %}
-        {{ content }}
-      {% endif %}
+        
+      {{ content }}
 
       {% if page.after-content %}
         <div class="after-content">
