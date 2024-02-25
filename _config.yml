@@ -296,6 +296,11 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
 
+gems: [jekyll-mermaid]
+
+mermaid:
+  src: 'node_modules/mermaid/dist/mermaid.js'
+
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 
