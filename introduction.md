@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /introduction/
+hasMermaid: true
 ---
 
 
