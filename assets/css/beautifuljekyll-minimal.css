@@ -21,10 +21,10 @@ footer.footer-min {
 
 /*! File: Shared/tables.less */
 table {
-  max-width: 2;
-  ba;background-color: transparent;
-  rder-collapse: collapse;
-  border-spacing: 0;
+  max-width: 100%;
+  background-color: transparent;
+  border-collapse: collapse;
+  border-spacing: 0
 }
 
 table th {
