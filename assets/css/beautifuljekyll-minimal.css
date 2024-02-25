@@ -4,20 +4,6 @@
   display: flex;
 }
 
-body {
-  font-family: 'Lora', 'Times New Roman', serif;
-  font-size: 1.125rem;
-  color: {{ site.text-col | default: "#404040" }};
-  position: relative;
-  overflow-wrap: break-word;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-body > main {
-  flex: 1;
-}
-
 footer.footer-min {
   position: fixed;
   bottom: 0;
