@@ -12,8 +12,7 @@ hasMermaid: true
 Place holder.
 
 ## Flow Diagram Troubleshooting
-
-```mermaid
+<div class="mermaid">
 graph LR; Start[Press Power button] 
 -->SoundLight{Sound / Light}; 
 SoundLight -->StaysOn{Stays On}; 
@@ -34,7 +33,7 @@ SmpsPowerSupplyGood-->CheckBootSeq{Check Boot Sequence};
 CheckBootSeq-->CheckStandByVolts{Check Standby Voltages};
 CheckStandByVolts-->CheckPowerOnVolts{Check Power On Voltages};
 CheckPowerOnVolts-->CheckSouthBridge{Check Southbridge IC};
-```
+</div>
 
 ## UART Locations
 
