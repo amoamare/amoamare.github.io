@@ -1,5 +1,7 @@
 .main-content {
   padding-bottom: 3.125rem;
+  justify-content: center;
+  display: flex;
 }
 
 body {
