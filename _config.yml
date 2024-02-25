@@ -299,7 +299,7 @@ plugins:
 gems: [jekyll-mermaid]
 
 mermaid:
-  src: 'node_modules/mermaid/dist/mermaid.js'
+  src: 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.8.0/mermaid.js'
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
