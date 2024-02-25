@@ -12,13 +12,6 @@ footer.footer-min {
   text-align: center;
 }
 
-
-.cell .lang {
-  position: absolute;
-  bottom: 0;
-  right: 0
-}
-
 /*! File: Shared/tables.less */
 table {
   max-width: 100%;
