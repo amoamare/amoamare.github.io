@@ -3,28 +3,36 @@
 <head>
   <title>{{ page.title }}</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-image: url('{{ page.background_image }}');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    /* Container to position the image and overlaying divs */
+    .container {
       position: relative;
+      width: 100%; /* Adjust as needed */
+      height: auto; /* Set height to auto for responsive resizing */
     }
+    
+    /* Image to be overlaid */
+    .image {
+      display: block;
+      width: 100%; /* Set width to 100% to fill the container */
+      height: auto; /* Set height to auto for responsive resizing */
+    }
+    
+    /* Overlaying divs with absolute positioning */
     .highlight {
       position: absolute;
-      border: 2px solid red; /* Change the border style as needed */
-      background-color: rgba(255, 0, 0, 0.3); /* Adjust the background color and opacity as needed */
-      box-sizing: border-box; /* Ensure border is included in the dimensions */
+      /* Adjust top, left, width, and height as needed */
+      top: 20%;
+      left: 20%;
+      width: 30%;
+      height: 30%;
+      background-color: rgba(255, 0, 0, 0.3); /* Adjust background color and opacity as needed */
+      border: 2px solid red; /* Adjust border properties as needed */
     }
   </style>
 </head>
 <body>
-  <div id="highlight-container">
+  <div class="container">
+    <img class="image" src="{{ page.background_image }}" alt="Background Image">
     {% if page.highlighted_areas %}
       {% assign selected_areas = page.highlighted_areas | split: ',' %}
       {% for area_id in selected_areas %}
@@ -35,34 +43,5 @@
       {% endfor %}
     {% endif %}
   </div>
-
-  <script>
-    // Function to adjust highlighted areas based on background image size
-    function adjustHighlightAreas() {
-      var container = document.getElementById('highlight-container');
-      var imageWidth = container.offsetWidth;
-      var imageHeight = container.offsetHeight;
-      
-      var highlights = document.querySelectorAll('.highlight');
-      highlights.forEach(function(highlight) {
-        var areaInfo = highlight.getBoundingClientRect();
-        var top = (areaInfo.top / imageHeight) * 100;
-        var left = (areaInfo.left / imageWidth) * 100;
-        var width = (areaInfo.width / imageWidth) * 100;
-        var height = (areaInfo.height / imageHeight) * 100;
-        
-        highlight.style.top = top + '%';
-        highlight.style.left = left + '%';
-        highlight.style.width = width + '%';
-        highlight.style.height = height + '%';
-      });
-    }
-    
-    // Call adjustHighlightAreas() when the window is resized
-    window.addEventListener('resize', adjustHighlightAreas);
-    
-    // Call adjustHighlightAreas() initially to set the correct positions
-    window.onload = adjustHighlightAreas;
-  </script>
 </body>
 </html>
