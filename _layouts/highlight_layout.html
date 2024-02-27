@@ -23,12 +23,16 @@
   </style>
 </head>
 <body>
-  {% assign selected_areas = page.highlighted_areas | split: ',' %}
-  {% for area in selected_areas %}
-    {% assign area_info = site.data.highlight_areas | where: "id", area | first %}
-    {% if area_info %}    
-    <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;"></div>
+    {% if page.highlighted_areas %}
+      {% assign selected_areas = page.highlighted_areas | split: ',' %}
+      {% assign total_areas = selected_areas | size %}
+      {% assign area_width = 100 / total_areas %}
+      {% for area_id in selected_areas %}
+        {% assign area_info = site.highlight_areas | where: "id", area_id | first %}
+        {% if area_info %}
+          <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_width | times: forloop.index0 }}%; width: {{ area_width }}%; height: {{ area_info.height }}%;"></div>
+        {% endif %}
+      {% endfor %}
     {% endif %}
-  {% endfor %}
-</body>
+  </body>
 </html>
