@@ -1,49 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{{ page.title }}</title>
-  <style>
-    /* Container to position the image and overlaying divs */
-    .container {
-      position: relative;
-      width: 100%; /* Adjust as needed */
-      height: auto; /* Set height to auto for responsive resizing */
-    }
-    
-    /* Image to be overlaid */
-    .image {
-      display: block;
-      width: 100%; /* Set width to 100% to fill the container */
-      height: auto; /* Set height to auto for responsive resizing */
-    }
-    
-    /* Overlaying divs with absolute positioning */
-    .highlight {
-      position: absolute;
-      /* Adjust top, left, width, and height as needed */
-      background-color: rgba(255, 0, 0, 0.3); /* Adjust background color and opacity as needed */
-      border: 2px solid red; /* Adjust border properties as needed */
-      display: flex; /* Use flexbox for easier alignment */
-      justify-content: center; /* Center the bank number horizontally */
-      align-items: center; /* Center the bank number vertically */
-      color: white; /* Color the bank number white */
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <img class="image" src="{{ page.background_image }}" alt="Background Image">
-    {% if page.highlighted_areas %}
-      {% assign selected_areas = page.highlighted_areas | split: ',' %}
-      {% for area_id in selected_areas %}
-        {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
-        {% if area_info %}
-        <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
-        {{ area_info.id }}
-        </div>  
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  </div>
-</body>
-</html>
+---
+layout: minimal
+common-css:
+  - "/assets/css/highlight_page.css"
+---
+
+<div class="container">
+  <img class="image" src="{{ page.background_image }}" alt="Background Image">
+  {% if page.highlighted_areas %}
+    {% assign selected_areas = page.highlighted_areas | split: ',' %}
+    {% for area_id in selected_areas %}
+      {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
+      {% if area_info %}
+      <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
+      {{ area_info.id }}
+      </div>  
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
