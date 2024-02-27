@@ -25,8 +25,8 @@
   {% assign selected_areas = page.highlighted_areas | split: ',' %}
   {% for area in selected_areas %}
     {% assign area_info = site.highlight_areas | where: "id", area | first %}
-    {% if area_info %}
-    
+    {% if area_info %}    
+    <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;"></div>
     {% endif %}
   {% endfor %}
 </body>
