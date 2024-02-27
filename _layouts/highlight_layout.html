@@ -19,18 +19,50 @@
       position: absolute;
       border: 2px solid red; /* Change the border style as needed */
       background-color: rgba(255, 0, 0, 0.3); /* Adjust the background color and opacity as needed */
+      box-sizing: border-box; /* Ensure border is included in the dimensions */
     }
   </style>
 </head>
 <body>
-  {% if page.highlighted_areas %}
-    {% assign selected_areas = page.highlighted_areas | split: ',' %}
-    {% for area_id in selected_areas %}
-      {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
-      {% if area_info %}
-        <div class="highlight" style="top: {{ area_info.top }}px; left: {{ area_info.left }}px; width: {{ area_info.width }}px; height: {{ area_info.height }}px;"></div>
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+  <div id="highlight-container">
+    {% if page.highlighted_areas %}
+      {% assign selected_areas = page.highlighted_areas | split: ',' %}
+      {% for area_id in selected_areas %}
+        {% assign area_info = site.highlight_areas | where: "id", area_id | first %}
+        {% if area_info %}
+          <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;"></div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  <script>
+    // Function to adjust highlighted areas based on background image size
+    function adjustHighlightAreas() {
+      var container = document.getElementById('highlight-container');
+      var imageWidth = container.offsetWidth;
+      var imageHeight = container.offsetHeight;
+      
+      var highlights = document.querySelectorAll('.highlight');
+      highlights.forEach(function(highlight) {
+        var areaInfo = highlight.getBoundingClientRect();
+        var top = (areaInfo.top / imageHeight) * 100;
+        var left = (areaInfo.left / imageWidth) * 100;
+        var width = (areaInfo.width / imageWidth) * 100;
+        var height = (areaInfo.height / imageHeight) * 100;
+        
+        highlight.style.top = top + '%';
+        highlight.style.left = left + '%';
+        highlight.style.width = width + '%';
+        highlight.style.height = height + '%';
+      });
+    }
+    
+    // Call adjustHighlightAreas() when the window is resized
+    window.addEventListener('resize', adjustHighlightAreas);
+    
+    // Call adjustHighlightAreas() initially to set the correct positions
+    window.onload = adjustHighlightAreas;
+  </script>
 </body>
 </html>
