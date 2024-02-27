@@ -15,24 +15,32 @@
       align-items: center;
       position: relative;
     }
+    .highlight-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%; /* 16:9 aspect ratio. Adjust as needed */
+    }
     .highlight {
       position: absolute;
       border: 2px solid red; /* Change the border style as needed */
-      background-color: rgba(255, 0, 0, 0.3); /* Adjust the alpha (last value) for the opacity/fade effect */
+      background-color: rgba(255, 0, 0, 0.3); /* Adjust the background color and opacity as needed */
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
+  <div class="highlight-container">
     {% if page.highlighted_areas %}
       {% assign selected_areas = page.highlighted_areas | split: ',' %}
-      {% assign total_areas = selected_areas | size %}
-      {% assign area_width = 100 / total_areas %}
       {% for area_id in selected_areas %}
         {% assign area_info = site.highlight_areas | where: "id", area_id | first %}
         {% if area_info %}
-          <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_width | times: forloop.index0 }}%; width: {{ area_width }}%; height: {{ area_info.height }}%;"></div>
+          <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%;"></div>
         {% endif %}
       {% endfor %}
     {% endif %}
-  </body>
+  </div>
+</body>
 </html>
