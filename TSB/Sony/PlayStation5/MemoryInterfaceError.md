@@ -7,13 +7,13 @@ highlighted_areas: "1,2,4,3,5,6,7,8" # Pass any combination of area numbers sepa
 subtitle: Technical Service Bulletin
 permalink: /tsb/sony/playstation5/MemoryInterfaceError/
 
-common-css:
+css:
   - "/assets/css/highlight_page.css"
-common-js:
+js:
   - "/assets/js/consoleservicetool.js"
 ---
 
-# Error Code: C0900002
+# Error Code: 
 
 ### Table of Contents
 1. [Overview](#overview)
