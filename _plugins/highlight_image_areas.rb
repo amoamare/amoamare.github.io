@@ -34,24 +34,9 @@ module Jekyll
 
         image = Dir.glob(@attributes['img'])
 
-        ##text = super
-       ## "<p>#{text} #{Time.now}</p>"
-        "
-        <div class=\"container\">
-        <img class=\"image\" src=\"#{ image }\" alt=\"Background Image\">
-        {% if page.highlighted_areas %}
-          {% assign selected_areas = page.highlighted_areas | split: ',' %}
-          {% for area_id in selected_areas %}
-            {% assign area_info = site.data.highlight_areas | where: \"id\", area_id | first %}
-            {% if area_info %}
-            <div class=\"highlight\" style=\"top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;\">
-            {{ area_info.id }}
-            </div>  
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      </div>
-      "
+        text = super
+        "<p>#{text} #{Time.now}</p>"
+       
       end
   
     end
