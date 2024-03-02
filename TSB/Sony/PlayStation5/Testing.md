@@ -20,3 +20,11 @@ Testing Plugin
 {% highlight_img_areas img:/assets/img/ps5motherboard.jpg %}
     <img src="{{ image }}" />
 {% endhighlight_img_areas %}
+
+
+```highlight_img_areas
+
+```
+
+
+
