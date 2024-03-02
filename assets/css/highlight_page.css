@@ -1,5 +1,5 @@
 /* Container to position the image and overlaying divs */
-.container {
+div.container {
     position: relative;
     width: 100%; /* Adjust as needed */
     height: auto; /* Set height to auto for responsive resizing */
@@ -13,7 +13,7 @@
 }
 
 /* Overlaying divs with absolute positioning */
-.highlight {
+div.highlight {
     position: absolute;
     /* Adjust top, left, width, and height as needed */
     background-color: rgba(255, 0, 0, 0.3); /* Adjust background color and opacity as needed */
