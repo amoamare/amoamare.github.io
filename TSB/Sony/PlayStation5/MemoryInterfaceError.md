@@ -26,7 +26,7 @@ permalink: /tsb/sony/playstation5/MemoryInterfaceError/
 Testing Plugin
 
 {% highlight_img_areas %}
-page rendered at:
+page rendered at:4
 {% endhighlight_img_areas %}
 
 
