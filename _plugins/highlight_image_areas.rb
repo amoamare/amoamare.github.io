@@ -8,7 +8,7 @@
 module Jekyll
     class HighlightImageAreasBlock < Liquid::Block
 
-      def initialize(tag_name, markup, tokens)
+      def initialize(tag_name, markup)
         @attributes = {}
 
         @attributes['img'] = '';
