@@ -8,8 +8,11 @@
 module Jekyll
     class HighlightImageAreasBlock < Liquid::Block
 
+      include Liquid::StandardFilters
+      Syntax = /(#{Liquid::QuotedFragment}+)?/
+
       def initialize(tag_name, markup, tokens)
-        super
+
         @attributes = {}
 
         @attributes['img'] = '';
@@ -27,6 +30,8 @@ module Jekyll
         #if @attributes['img'].nil?
         #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
         #end
+
+        super
       end
      
       def render(context)
