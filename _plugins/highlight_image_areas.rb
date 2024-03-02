@@ -34,7 +34,7 @@ module Jekyll
 
         image = Dir.glob(@attributes['img'])
 
-        ##text = super
+        text = super
        ## "<p>#{text} #{Time.now}</p>"
           "
           <div class=\"container\">
@@ -53,6 +53,8 @@ module Jekyll
         </div>
           "
       end
+  
+    end
   end
   
   Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
