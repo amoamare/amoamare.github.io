@@ -23,6 +23,11 @@ permalink: /tsb/sony/playstation5/MemoryInterfaceError/
 
 # GDDR6 Memory Banks No Reponse
 
+{% highlight_img_areas %}
+page rendered at:
+{% highlight_img_areas %}
+
+
 <div class="container">
   <img class="image" src="{{ page.background_image }}" alt="Background Image">
   {% if page.highlighted_areas %}
