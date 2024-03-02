@@ -15,6 +15,6 @@ permalink: /tsb/sony/playstation5/Testing/
 
 Testing Plugin
 
-{% highlight_img_areas %}
-page rendered at:
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg areas:1,2,4,3,5,6,7,8 %}
+    <img src="{{ image }}" />
 {% endhighlight_img_areas %}
