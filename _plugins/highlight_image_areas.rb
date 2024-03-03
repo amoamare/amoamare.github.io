@@ -18,7 +18,7 @@ module Jekyll
 
     def render(context)
       context.registers[:highlight_img_areas] ||= Hash.new(0)     
-      UpdatePageTitle("whattt")
+      UpdatePageTitle(context, "whattt")
 
       site = context.registers[:site]    
       site_highlight_areas = site.data['highlight_areas'] || []
@@ -62,9 +62,9 @@ module Jekyll
       attributes
     end
 
-    def UpdatePageTitle(title)        
+    def UpdatePageTitle(context, title)        
       # Update page title
-      page = @context.registers[:page]
+      page = context.registers[:page]
       page['title'] = title     
     end
   end
