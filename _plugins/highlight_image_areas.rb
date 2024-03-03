@@ -5,20 +5,15 @@ module Jekyll
     Syntax = /(#{Liquid::QuotedFragment}+)?/
 
     def initialize(tag_name, markup, tokens)
+      super
       @attributes = {}
       markup.scan(Liquid::TagAttributes) do |key, value|
         @attributes[key] = value    
       end  
-      super
     end
 
     def render(context)      
       context.registers[:highlight_img_areas] ||= Hash.new(0)
-      site = context.registers[:site]
-    
-      @site_highlight_areas = site.data['highlight_areas']
-      
-      @highlighted_areas = "0,1,3,4"
       image = @attributes['img']
       
       
