@@ -10,7 +10,7 @@ module Jekyll
 
     def render(context)      
       context.registers[:highlight_img_areas] ||= Hash.new(0)
-      output
+      super
     end
   end
 end
