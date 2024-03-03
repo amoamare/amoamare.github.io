@@ -7,7 +7,7 @@ includeImageHighlights: true
 siteTitle: "hello"
 
 subtitle: Technical Service Bulletin
-permalink: /tsb/sony/playstation5/MemoryInterfaceError/
+permalink: /tsb/sony/playstation5/Testing/
 css: /assets/css/highlight_page.css
 js: /assets/js/consoleservicetool.js
 ---
