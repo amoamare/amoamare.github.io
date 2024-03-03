@@ -12,6 +12,7 @@ module Jekyll
       Syntax = /(#{Liquid::QuotedFragment}+)?/
 
       def initialize(tag_name, markup, tokens)
+        puts "Markup: #{markup}"
         @attributes = {}
 
         @attributes['img'] = '';
@@ -39,21 +40,26 @@ module Jekyll
         image = Dir.glob(@attributes['img'])
 
         
+      # Access custom data via context
+      page_data = context['page']
+      highlighted_areas = page_data['highlighted_areas']
+
   content = super
+  
   output = <<~EOS
   <div class="container">
     <img class="image" src="#{image}" alt="Background Image">
-    #{% if page.highlighted_areas %}
-      #{% assign selected_areas = page.highlighted_areas | split: ',' %}
-      #{% for area_id in selected_areas %}
-        #{% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
-        #{% if area_info %}
-        <div class="highlight" style="top: #{ area_info.top }%; left: #{ area_info.left }%; width: #{ area_info.width }%; height: #{ area_info.height }%;">
-        #{ area_info.id }
+    {% if highlighted_areas %}
+      {% assign selected_areas = highlighted_areas | split: ',' %}
+      {% for area_id in selected_areas %}
+        {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
+        {% if area_info %}
+        <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
+        {{ area_info.id }}
         </div>  
-        #{% endif %}
-      #{% endfor %}
-    #{% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   </div>
   EOS
 
