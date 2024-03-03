@@ -40,6 +40,12 @@ module Jekyll
       image = @attributes['img']
 
       puts "Markup: #{image}"
+
+    # Access data from the _data folder
+    my_data = site.data['highlight_areas']  # Replace 'your_data_file' with the name of your data file
+
+    # Add custom variables to the Liquid context
+    context['highlight_areas'] = my_data
       
       
 
@@ -77,4 +83,3 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
-
