@@ -17,14 +17,17 @@ module Jekyll
     end
 
     def render(context)      
-      context.registers[:highlight_img_areas] ||= Hash.new(0)     
+      context.registers[:highlight_img_areas] ||= Hash.new(0)
+      
+      page = context.registers[:page]
+      
       siteTitle = @attributes['siteTitle']
       UpdatePageTitle(context, siteTitle) 
       
       site = context.registers[:site]    
       site_highlight_areas = site.data['highlight_areas'] || []
       
-      highlighted_areas = @attributes['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
+      highlighted_areas = page.highlighted_areas #@attributes['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
       
       # Output the value of highlighted_areas for debugging
 puts "highlighted_areas: '#{highlighted_areas}'"
