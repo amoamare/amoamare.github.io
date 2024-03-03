@@ -49,7 +49,7 @@ puts "Individual areas: #{selected_areas.inspect}"
 
       output = <<~HTML
       <div class="highlight_image_areas_container">
-        <img class="img_highlight_image_areas" src="#{highlight_image}" ">
+        <img class="img_highlight_image_areas" src="#{highlight_image}">
         <div name="highlights">
           {% if highlighted_areas %}
             {% assign selected_areas = highlighted_areas | split: ',' %}
