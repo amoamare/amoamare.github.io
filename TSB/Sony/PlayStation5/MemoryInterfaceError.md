@@ -34,9 +34,9 @@ Testing Plugin
     {% assign pair = param | split: '=' %}
     {% assign key = pair[0] | url_decode %}
     {% assign value = pair[1] | url_decode %}
-    {% assign _ = assign key value %}
+    {% capture _ %}{% assign {{ key }} = value %}{% endcapture %}
   {% endfor %}
 {% endif %}
 
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg siteTitle: {{ error }} %}
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg siteTitle:{{ error }} %}
 {% endhighlight_img_areas %}
