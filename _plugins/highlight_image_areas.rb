@@ -67,14 +67,12 @@ module Jekyll
       </div>
       HTML
 
-      
-      puts "HTML: #{output}"
-
       # Parse the output string with Liquid to render any Liquid syntax
       #rendered_output = Liquid::Template.parse(output).render(context)
 
       # Return the rendered output
       super
+      output
     end
 
     # Override blank? method to always return true, indicating that the block is blank
