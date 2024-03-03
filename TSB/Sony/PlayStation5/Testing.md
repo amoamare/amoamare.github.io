@@ -1,5 +1,5 @@
 
-# Error Code:  {{ page.title }}
+# {{ page.title }}
 
 test {{ include.errorCode }}
 
@@ -15,5 +15,5 @@ test {{ include.errorCode }}
 
 # GDDR6 Memory Banks No Reponse
 
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg %}
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg highlighted_areas:{{ page.highlighted_areas }} %}
 {% endhighlight_img_areas %}
