@@ -2,7 +2,9 @@
   {% include {{ page.title }} %}
 {% endif %}
 
-# Error Code:  {% page.title %}
+# Error Code:  {{% page.title %}}
+
+test {{% include.errorCode %}}
 
 ### Table of Contents
 1. [Overview](#overview)
