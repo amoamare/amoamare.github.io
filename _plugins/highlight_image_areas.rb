@@ -23,7 +23,7 @@ module Jekyll
       puts "Markup: #{output}"
       rendered_output = Liquid::Template.parse(output).render(build_context)
       puts "Markup: #{rendered_output}"
-      rendered_output
+      super + rendered_output
     end
 
     private
