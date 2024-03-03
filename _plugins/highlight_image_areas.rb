@@ -22,7 +22,7 @@ module Jekyll
       output = read_template_file('highlight_image_areas.html')
       puts "Markup: #{output}"
       rendered_output = Liquid::Template.parse(output).render(build_context)
-
+      puts "Markup: #{rendered_output}"
       rendered_output
     end
 
