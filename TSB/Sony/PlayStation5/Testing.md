@@ -7,6 +7,7 @@ includeImageHighlights: true
 
 subtitle: Technical Service Bulletin
 permalink: /tsb/sony/playstation5/Testing/
+css: /assets/css/highlight_page.css
 ---
 
 # Error Code: 

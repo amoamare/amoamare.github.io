@@ -66,8 +66,12 @@ module Jekyll
               
               <div name="made it21"></div>
               {% if area_info %}
+              <div name="made 2222"></div>
+              <div name="made it21">
+              {{area_info}}
+              </div>
               <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
-              {{ area_info.id }}
+                {{ area_info.id }}
               </div>  
               {% endif %}
             {% endfor %}
