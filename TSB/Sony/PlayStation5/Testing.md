@@ -1,8 +1,7 @@
 
 # {{ page.title }}
 
-test {{ include.errorCode }}
-lighted_:"{{ page.highlighted_areas }}"
+#test {{ include.errorCode }}
 
 ### Table of Contents
 1. [Overview](#overview)
@@ -16,6 +15,6 @@ lighted_:"{{ page.highlighted_areas }}"
 
 # GDDR6 Memory Banks No Reponse
 {% assign variable = page.highlighted_areas %}
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg, highlighted_areas:{{ site.data[page.title] }} %}
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg %}
 {% endhighlight_img_areas %}
 
