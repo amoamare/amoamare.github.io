@@ -19,13 +19,10 @@ module Jekyll
         @attributes[key] = value
        
       puts "Markup: #{@attributes['img']}"
-      site = context.registers[:site]
-    
-      site_highlight_areas = site.data['highlight_areas']
 
 
       @highlighted_areas = "0,1,3,4";
-      
+
       #if @attributes['img'].nil?
       #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
       #end
