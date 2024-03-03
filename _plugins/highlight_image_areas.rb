@@ -18,7 +18,7 @@ module Jekyll
 
     def render(context)
       @context = context
-      output = read_template_file('highlight_img_areas.html')
+      output = read_template_file('highlight_image_areas.html')
       rendered_output = Liquid::Template.parse(output).render(build_context)
 
       super + rendered_output
@@ -43,8 +43,7 @@ module Jekyll
     end
 
     def read_template_file(filename)
-      includes_dir = @context.registers[:site].in_source_dir('_includes')
-      file_path = File.join("/_includes", filename)
+      file_path = File.join("_includes", filename)
       File.read(file_path)
     end
   end
