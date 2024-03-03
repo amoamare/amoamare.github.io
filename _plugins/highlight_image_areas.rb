@@ -48,7 +48,7 @@ module Jekyll
             {% for area_id in selected_areas %}
               {% assign area_info = site.data.highlight_areas | where: \"id\", area_id | first %}
               {% if area_info %}
-              <div class=\"highlight\" style=\"top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;\">
+              <div class=\"asdf\" style=\"top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;\">
               {{ area_info.id }}
               </div>  
               {% endif %}
