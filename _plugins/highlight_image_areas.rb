@@ -13,8 +13,8 @@ module Jekyll
 
       def initialize(tag_name, markup, tokens)
         
-        puts "Markup: #{markup}"
         img = @attributes['img']
+        puts "Markup: #{img}"
         @attributes = {}
 
         @attributes['img'] = '';
