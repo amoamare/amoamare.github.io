@@ -59,24 +59,14 @@ module Jekyll
         <div name="highlights">
           {% if highlighted_areas %}
             {% assign selected_areas = highlighted_areas | split: ',' %}
-            <div name="made it">
-            {{selected_areas}}
-            </div>
             {% for area_id in selected_areas %}
               {% assign area_info = site_highlight_areas | where: "id", area_id | first %}              
-              <div name="made it21"></div>
               {% if area_info %}
-              <div name="made 2222"></div>
-              <div name="made it21">
-              {{area_info}}
-              </div>
               <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
                 {{ area_info.id }}
               </div>  
               {% endif %}
-            {% endfor %}
-          {% else %}
-            <div>No highlight areas data found</div>
+            {% endfor %}        
           {% endif %}
         </div>
       </div>
