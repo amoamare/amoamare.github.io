@@ -26,7 +26,11 @@ css: /assets/css/highlight_page.css
 
 Testing Plugin
 
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg %}
+{% endhighlight_img_areas %}
 
+
+## Original 
 
 <div class="container">
   <img class="img_highlight_image_areas" src="{{ page.background_image }}" alt="Background Image">

@@ -17,41 +17,19 @@ module Jekyll
       # Parse parameters
       markup.scan(Liquid::TagAttributes) do |key, value|
         @attributes[key] = value
-      end
-      
-
-
-      #if @attributes['img'].nil?
-      #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
-      #end
-      
+      end      
       super
     end
 
     def render(context)      
-      context.registers[:highlight_img_areas] ||= Hash.new(0)
-      
-      site = context.registers[:site]
-    
+      context.registers[:highlight_img_areas] ||= Hash.new(0)      
+      site = context.registers[:site]    
       site_highlight_areas = site.data['highlight_areas'] || []
       
       highlighted_areas = "0,1,3,4"
-      context['highlighted_areas'] = highlighted_areas 
-
-      
-      context['site_highlight_areas'] = site_highlight_areas 
-
+      context['highlighted_areas'] = highlighted_areas      
+      context['site_highlight_areas'] = site_highlight_areas       
       image = @attributes['img']
-
-      puts "Markup: #{image}"
-
-   
-
-    puts "Data: #{site_highlight_areas}"
-      
-      
-
-      #  content = super
 
       output = <<~HTML
       <div class="highlight_image_areas">

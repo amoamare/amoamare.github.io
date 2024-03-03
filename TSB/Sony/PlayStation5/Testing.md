@@ -16,5 +16,5 @@ css: /assets/css/highlight_page.css
 
 Testing Plugin
 
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg test:true %}
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg %}
 {% endhighlight_img_areas %}
