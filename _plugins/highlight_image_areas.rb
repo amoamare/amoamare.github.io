@@ -13,8 +13,6 @@ module Jekyll
 
       def initialize(tag_name, markup, tokens)
         puts "Markup: #{markup}"
-        
-        img =  @attributes['img']
         @attributes = {}
 
         @attributes['img'] = '';
@@ -48,10 +46,6 @@ module Jekyll
 
 #  content = super
 
-site = context.registers[:site]
-converter = site.find_converter_instance(::Jekyll::Converters::Markdown)
-content = converter.convert(super)
-  
   output = <<~EOS
   <div class="container">
     <img class="image" src="#{img}" alt="Background Image">
