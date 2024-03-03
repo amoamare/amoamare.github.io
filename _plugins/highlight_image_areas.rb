@@ -58,7 +58,7 @@ module Jekyll
     
       # Parse the output string with Liquid to render any Liquid syntax
       #rendered_output = Liquid::Template.parse(output).render(context)
-      output = Liquid::Template.parse(File.read("path/to/highlight_areas_template.html")).render('highlighted_areas' => highlighted_areas, 'context' => context)
+      rendered_output = Liquid::Template.parse(output).render('highlighted_areas' => highlighted_areas, 'context' => context)
       # Return the rendered output
       rendered_output
     end
