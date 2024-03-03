@@ -20,8 +20,6 @@ module Jekyll
        
       puts "Markup: #{@attributes['img']}"
       
-      puts "Markup: #{@attributes}"
-      puts "Markup: #{tokens}"
 
 
       #if @attributes['img'].nil?
@@ -31,8 +29,9 @@ module Jekyll
       super
     end
 
-    def render(context)
-      image = Dir.glob(@attributes['img']).first
+    def render(context)      
+      context.registers[:highlight_img_areas] ||= Hash.new(0)
+      image = @attributes['img']
 
       puts "Markup: #{image}"
       
@@ -46,7 +45,7 @@ output = <<~EOS
   {% if highlighted_areas %}
     {% assign selected_areas = highlighted_areas | split: ',' %}
     {% for area_id in selected_areas %}
-      {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
+      {% assign area_info = "#{site.data['highlight_areas']}" | where: "id", area_id | first %}
       {% if area_info %}
       <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
       {{ area_info.id }}
