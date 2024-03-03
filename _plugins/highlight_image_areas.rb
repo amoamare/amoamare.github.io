@@ -24,7 +24,7 @@ module Jekyll
       site = context.registers[:site]    
       site_highlight_areas = site.data['highlight_areas'] || []
       
-      highlighted_areas = @attributes['highlighted_areas']
+      highlighted_areas = @attributes['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
       
       # Output the value of highlighted_areas for debugging
 puts "highlighted_areas: '#{highlighted_areas}'"
