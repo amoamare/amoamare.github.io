@@ -1,4 +1,4 @@
-# Error Code:  {% title %}
+# Error Code:  {% page.title %}
 
 ### Table of Contents
 1. [Overview](#overview)
