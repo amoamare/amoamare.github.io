@@ -27,16 +27,7 @@ js: /assets/js/consoleservicetool.js
 
 Testing Plugin
 
-{% assign url_parts = page.url | split: '?' %}
-{% if url_parts.size > 1 %}
-  {% assign query_params = url_parts[1] | split: '&' %}
-  {% for param in query_params %}
-    {% assign pair = param | split: '=' %}
-    {% assign key = pair[0] | url_decode %}
-    {% assign value = pair[1] | url_decode %}
-    {% capture _ %}{% assign {{ key }} = value %}{% endcapture %}
-  {% endfor %}
-{% endif %}
+{% assign requestId = request.params.error %}
 
 {% highlight_img_areas img:/assets/img/ps5motherboard.jpg siteTitle:{{ error }} %}
 {% endhighlight_img_areas %}
