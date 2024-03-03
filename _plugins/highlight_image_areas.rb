@@ -18,6 +18,7 @@ module Jekyll
 
     def render(context)
       @context = context
+      UpdatePageTitle("whattt")
       output = read_template_file('highlight_image_areas.html')
       rendered_output = Liquid::Template.parse(output).render(build_context)
 
@@ -45,6 +46,12 @@ module Jekyll
     def read_template_file(filename)
       file_path = File.join("_includes", filename)
       File.read(file_path)
+    end
+    
+    def UpdatePageTitle(title)        
+      # Update page title
+      page = @context.registers[:page]
+      page['title'] = title     
     end
   end
 end
