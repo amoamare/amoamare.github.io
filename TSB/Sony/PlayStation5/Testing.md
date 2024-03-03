@@ -15,7 +15,7 @@ lighted_:"{{ page.highlighted_areas }}"
 6. [Parts Information](#parts-information)
 
 # GDDR6 Memory Banks No Reponse
-
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg, highlighted_areas: page.highlighted_areas %}
+{% assign variable = page.highlighted_areas %}
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg, highlighted_areas:variable %}
 {% endhighlight_img_areas %}
 
