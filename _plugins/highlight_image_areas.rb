@@ -38,6 +38,8 @@ module Jekyll
       
       highlighted_areas = "0,1,3,4";
     
+      puts "Ssssss: #{site_highlight_areas}"
+      puts "Sssssasdsas: #{highlighted_areas}"
       output = <<~EOS
       <div class="container">
         <img class="image" src="#{image}" alt="Background Image">
