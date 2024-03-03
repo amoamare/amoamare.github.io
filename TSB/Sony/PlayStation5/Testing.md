@@ -16,6 +16,6 @@ lighted_:"{{ page.highlighted_areas }}"
 
 # GDDR6 Memory Banks No Reponse
 {% assign variable = page.highlighted_areas %}
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg, highlighted_areas:variable %}
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg, highlighted_areas:"{{ page.title }}" %}
 {% endhighlight_img_areas %}
 
