@@ -17,8 +17,7 @@ module Jekyll
       # Parse parameters
       markup.scan(Liquid::TagAttributes) do |key, value|
         @attributes[key] = value
-       
-      puts "Markup: #{@attributes['img']}"
+      end
       
 
 
@@ -37,38 +36,37 @@ module Jekyll
       
       highlighted_areas = "0,1,3,4";
 
-#  content = super
+      #  content = super
 
-output = <<~EOS
-<div class="container">
-  <img class="image" src="#{image}" alt="Background Image">
-  {% if highlighted_areas %}
-    {% assign selected_areas = highlighted_areas | split: ',' %}
-    {% for area_id in selected_areas %}
-      {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
-      {% if area_info %}
-      <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
-      {{ area_info.id }}
-      </div>  
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-</div>
-EOS
+      output = <<~EOS
+      <div class="container">
+        <img class="image" src="#{image}" alt="Background Image">
+        {% if highlighted_areas %}
+          {% assign selected_areas = highlighted_areas | split: ',' %}
+          {% for area_id in selected_areas %}
+            {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
+            {% if area_info %}
+            <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
+            {{ area_info.id }}
+            </div>  
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+      EOS
 
-    # Parse the output string with Liquid to render any Liquid syntax
-    rendered_output = Liquid::Template.parse(output).render(context)
+      # Parse the output string with Liquid to render any Liquid syntax
+      rendered_output = Liquid::Template.parse(output).render(context)
 
-    # Return the rendered output
-    rendered_output
+      # Return the rendered output
+      rendered_output
     end
 
-  # Override blank? method to always return true, indicating that the block is blank
-  def blank?
-    false
+    # Override blank? method to always return true, indicating that the block is blank
+    def blank?
+      false
+    end
   end
-end
-end
 end
 
 Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
