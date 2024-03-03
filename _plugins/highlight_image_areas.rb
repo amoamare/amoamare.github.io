@@ -40,6 +40,9 @@ module Jekyll
       image = @attributes['img']
       
       
+      puts "S: #{site_highlight_areas}"
+      puts "s: #{highlighted_areas}"
+      
       output = <<~HTML
       <div class="container">
         <img class="image" src="#{image}" alt="Background Image">
@@ -57,6 +60,8 @@ module Jekyll
 
       </div>
       HTML
+      
+      puts "s: #{output}"
     
       # Parse the output string with Liquid to render any Liquid syntax
       rendered_output = Liquid::Template.parse(output).render(context)
