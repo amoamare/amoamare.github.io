@@ -13,7 +13,25 @@ module Jekyll
 
       def initialize(tag_name, markup, tokens)
         puts "Markup: #{markup}"
+        
         img =  @attributes['img']
+        @attributes = {}
+
+        @attributes['img'] = '';
+        @attributes['areas'] = '';
+
+        # Parse parameters
+        if markup =~ Syntax
+            markup.scan(Liquid::TagAttributes) do |key, value|
+                @attributes[key] = value
+            end
+        else
+            raise SyntaxError.new("Bad parameters given to 'highlight_img_areas' plugin.")
+        end
+
+        #if @attributes['img'].nil?
+        #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
+        #end
         
         super
       end
@@ -24,6 +42,7 @@ module Jekyll
         content = converter.convert(super)
         image = Dir.glob(@attributes['img']).first
 
+        puts "Markup: #{image}"
         
 
 
@@ -35,7 +54,7 @@ content = converter.convert(super)
   
   output = <<~EOS
   <div class="container">
-    <img class="image" src="#{image}" alt="Background Image">
+    <img class="image" src="#{img}" alt="Background Image">
     {% if highlighted_areas %}
       {% assign selected_areas = highlighted_areas | split: ',' %}
       {% for area_id in selected_areas %}
@@ -55,7 +74,6 @@ content = converter.convert(super)
 
       # Return the rendered output
       rendered_output
-      super
       end
 
     # Override blank? method to always return true, indicating that the block is blank
