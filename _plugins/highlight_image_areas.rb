@@ -19,9 +19,13 @@ module Jekyll
         @attributes[key] = value
        
       puts "Markup: #{@attributes['img']}"
+      site = context.registers[:site]
+    
+      site_highlight_areas = site.data['highlight_areas']
+
+
+      @highlighted_areas = "0,1,3,4";
       
-
-
       #if @attributes['img'].nil?
       #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
       #end
@@ -36,9 +40,7 @@ module Jekyll
       site_highlight_areas = site.data['highlight_areas']
       image = @attributes['img']
       
-      highlighted_areas = "0,1,3,4";
-    # Assign variables directly within the rendering context
-  context.assigns['highlight_areas'] = site_highlight_areas
+      #highlighted_areas = "0,1,3,4";
       
       output = <<~EOS
       <div class="container">
