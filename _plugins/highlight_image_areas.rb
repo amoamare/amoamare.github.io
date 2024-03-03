@@ -45,11 +45,11 @@ module Jekyll
 
       puts "HTML: #{output}"
       # Parse the output string with Liquid to render any Liquid syntax
-      rendered_output = Liquid::Template.parse(output).render(context)
+      #rendered_output = Liquid::Template.parse(output).render(context)
 
-      puts "HTML: #{rendered_output}"
+      #puts "HTML: #{rendered_output}"
       # Return the rendered output
-      rendered_output
+      output
     end
 
     # Override blank? method to always return false, indicating that the block is not blank
