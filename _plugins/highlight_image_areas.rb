@@ -35,7 +35,7 @@ module Jekyll
     
       site_highlight_areas = site.data['highlight_areas'] || []
       
-      highlighted_areas = [0,1,3,4]
+      highlighted_areas = "0,1,3,4"
       context['highlighted_areas'] = highlighted_areas 
 
       
@@ -55,7 +55,7 @@ module Jekyll
 
       output = <<~HTML
       <div class="highlight_image_areas">
-        <img class="image" src="#{image}" alt="Background Image">
+        <img class="img_highlight_image_areas" src="#{image}" alt="Background Image">
         <div name="highlights">
           {% if highlighted_areas %}
             {% assign selected_areas = highlighted_areas | split: ',' %}
