@@ -1,3 +1,7 @@
+{% if page.title %}
+  {% include {{ page.title }} %}
+{% endif %}
+
 # Error Code:  {% page.title %}
 
 ### Table of Contents
