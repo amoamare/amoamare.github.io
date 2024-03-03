@@ -14,13 +14,10 @@ module Jekyll
     def initialize(tag_name, markup, tokens)
       puts "Markup: #{markup}"
       @attributes = {}
-
-      @attributes['img'] = '';
-      @attributes['areas'] = '';
       puts "Markup: #{@attributes['img']}"
       # Parse parameters
-          markup.scan(Liquid::TagAttributes) do |key, value|
-              @attributes[key] = value
+      markup.scan(Liquid::TagAttributes) do |key, value|
+        @attributes[key] = value
        
 
 
