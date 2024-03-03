@@ -38,7 +38,7 @@ module Jekyll
 
       #  content = super
 
-      output = <<~EOS
+      output = <<~HTML
       <div class="container">
         <img class="image" src="#{image}" alt="Background Image">
         {% if highlighted_areas %}
@@ -53,7 +53,7 @@ module Jekyll
           {% endfor %}
         {% endif %}
       </div>
-      EOS
+      HTML
 
       # Parse the output string with Liquid to render any Liquid syntax
       rendered_output = Liquid::Template.parse(output).render(context)
