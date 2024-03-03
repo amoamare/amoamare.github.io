@@ -21,7 +21,7 @@ module Jekyll
       puts "Markup: #{@attributes['img']}"
 
 
-      @highlighted_areas = "0,1,3,4";
+      #@highlighted_areas = "0,1,3,4";
 
       #if @attributes['img'].nil?
       #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
@@ -37,7 +37,7 @@ module Jekyll
       site_highlight_areas = site.data['highlight_areas']
       image = @attributes['img']
       
-      #highlighted_areas = "0,1,3,4";
+      highlighted_areas = "0,1,3,4";
       
       output = <<~EOS
       <div class="container">
@@ -57,8 +57,8 @@ module Jekyll
       EOS
     
       # Parse the output string with Liquid to render any Liquid syntax
-      rendered_output = Liquid::Template.parse(output).render(context)
-    
+      #rendered_output = Liquid::Template.parse(output).render(context)
+      output = Liquid::Template.parse(File.read("path/to/highlight_areas_template.html")).render('highlighted_areas' => highlighted_areas, 'context' => context)
       # Return the rendered output
       rendered_output
     end
