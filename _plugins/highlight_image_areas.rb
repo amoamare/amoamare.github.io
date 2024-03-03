@@ -37,14 +37,14 @@ module Jekyll
       image = @attributes['img']
       
       highlighted_areas = "0,1,3,4";
-    
-      puts "Ssssss: #{site_highlight_areas}"
-      puts "Sssssasdsas: #{highlighted_areas}"
+    # Assign variables directly within the rendering context
+  context.assigns['highlight_areas'] = site_highlight_areas
+      
       output = <<~EOS
       <div class="container">
         <img class="image" src="#{image}" alt="Background Image">
-        {% if #{highlighted_areas} %}
-          {% assign selected_areas = #{highlighted_areas} | split: ',' %}
+        {% if highlighted_areas %}
+          {% assign selected_areas = highlighted_areas | split: ',' %}
           {% for area_id in selected_areas %}
             {% assign area_info = #{site_highlight_areas} | where: "id", area_id | first %}
             {% if area_info %}
