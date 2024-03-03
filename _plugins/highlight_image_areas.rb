@@ -63,12 +63,16 @@ module Jekyll
   </div>
   EOS
 
-  output
+      # Parse the output string with Liquid to render any Liquid syntax
+      rendered_output = Liquid::Template.parse(output).render(context)
+
+      # Return the rendered output
+      rendered_output
       end
 
     # Override blank? method to always return true, indicating that the block is blank
     def blank?
-      true
+      false
     end
   
     end
