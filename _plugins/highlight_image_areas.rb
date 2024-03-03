@@ -1,3 +1,10 @@
+
+#usage:
+#{% highlight_img_areas directory:images iterator:image filter:*.jpg sort:descending %}
+#   <img src="{{ image }}" />
+#{% highlight_img_areas %}
+
+
 module Jekyll
   class HighlightImageAreasBlock < Liquid::Block
 
@@ -5,37 +12,54 @@ module Jekyll
     Syntax = /(#{Liquid::QuotedFragment}+)?/
 
     def initialize(tag_name, markup, tokens)
-      super
+      puts "Markup: #{markup}"
       @attributes = {}
       # Parse parameters
       markup.scan(Liquid::TagAttributes) do |key, value|
         @attributes[key] = value
       end
+      
+
+
+      #if @attributes['img'].nil?
+      #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
+      #end
+      
+      super
     end
 
-    def render(context)
-      # Retrieve site object from context
-      site = context.registers[:site]
+    def render(context)      
+      context.registers[:highlight_img_areas] ||= Hash.new(0)
       
-      # Retrieve image path from attributes
-      image_path = @attributes['img']
+      site = context.registers[:site]
+    
+      site_highlight_areas = site.data['highlight_areas']
+      
+      highlighted_areas = "0,1,3,4";
 
-      # Access data from the _data folder
-      highlight_areas_data = site.data['highlight_areas'] || []
+      image = @attributes['img']
 
-      # Define areas to be highlighted
-      highlighted_areas = [0, 1, 3, 4]  # Example highlighted areas
+      puts "Markup: #{image}"
 
-      # Generate HTML output
+    # Access data from the _data folder
+    my_data = site.data['highlight_areas']  # Replace 'your_data_file' with the name of your data file
+
+    puts "Data: #{my_data}"
+      
+      
+
+      #  content = super
+
       output = <<~HTML
       <div class="container">
-        <img class="image" src="#{image_path}" alt="Background Image">
-        {% if highlight_areas_data %}
-          {% for area_id in highlighted_areas %}
-            {% assign area_info = highlight_areas_data | where: "id", area_id | first %}
+        <img class="image" src="#{image}" alt="Background Image">
+        {% if #{highlighted_areas} %}
+          {% assign selected_areas = #{highlighted_areas} | split: ',' %}
+          {% for area_id in selected_areas %}
+            {% assign area_info = #{my_data} | where: "id", area_id | first %}
             {% if area_info %}
-            <div class="highlight" style="top: {{ area_info['top'] }}%; left: {{ area_info['left'] }}%; width: {{ area_info['width'] }}%; height: {{ area_info['height'] }}%;">
-              {{ area_info['id'] }}
+            <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
+            {{ area_info.id }}
             </div>  
             {% endif %}
           {% endfor %}
@@ -43,16 +67,17 @@ module Jekyll
       </div>
       HTML
 
+      
       puts "HTML: #{output}"
+
       # Parse the output string with Liquid to render any Liquid syntax
       #rendered_output = Liquid::Template.parse(output).render(context)
 
-      #puts "HTML: #{rendered_output}"
       # Return the rendered output
       output
     end
 
-    # Override blank? method to always return false, indicating that the block is not blank
+    # Override blank? method to always return true, indicating that the block is blank
     def blank?
       false
     end
