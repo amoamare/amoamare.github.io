@@ -1,4 +1,4 @@
-# Error Code: 
+# Error Code:  {% title %}
 
 ### Table of Contents
 1. [Overview](#overview)
