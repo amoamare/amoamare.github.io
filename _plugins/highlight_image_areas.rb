@@ -14,11 +14,14 @@ module Jekyll
     def initialize(tag_name, markup, tokens)
       puts "Markup: #{markup}"
       @attributes = {}
-      puts "Markup: #{@attributes['img']}"
       # Parse parameters
       markup.scan(Liquid::TagAttributes) do |key, value|
         @attributes[key] = value
        
+      puts "Markup: #{@attributes['img']}"
+      
+      puts "Markup: #{@attributes}"
+      puts "Markup: #{tokens}"
 
 
       #if @attributes['img'].nil?
@@ -33,7 +36,7 @@ module Jekyll
 
       puts "Markup: #{image}"
       
-
+      highlighted_areas = "0,1,3,4";
 
 #  content = super
 
