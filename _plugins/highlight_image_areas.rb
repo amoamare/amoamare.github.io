@@ -17,38 +17,18 @@ module Jekyll
     end
 
     def render(context)
-      @context = context
-      @context.registers[:highlight_img_areas] ||= Hash.new(0)     
+      context.registers[:highlight_img_areas] ||= Hash.new(0)     
       UpdatePageTitle("whattt")
-      output = read_template_file('highlight_image_areas.html')
-      rendered_output = Liquid::Template.parse(output).render(build_context)
-      # Return the rendered output
-      super
-      rendered_output
-    end
 
-    private
+      site = context.registers[:site]    
+      site_highlight_areas = site.data['highlight_areas'] || []
+      
+      highlighted_areas = "0,1,3,4"
+      context['highlighted_areas'] = highlighted_areas      
+      context['site_highlight_areas'] = site_highlight_areas       
+      image = @attributes['img']
 
-    def parse_attributes(markup)
-      attributes = {}
-      markup.scan(Liquid::TagAttributes) do |key, value|
-        attributes[key] = value
-      end
-      attributes
-    end
-
-    def build_context
-      {
-        'image' => @attributes['img'],
-        'highlighted_areas' => '0,1,3,4',
-        'site_highlight_areas' => @context.registers[:site].data['highlight_areas'] || []
-      }
-    end
-
-    def read_template_file(filename)
-      includes_dir = @context.registers[:site].in_source_dir('_includes')
-      file_path = File.join(includes_dir, filename)
-      <<~HTML
+      output = <<~HTML
       <div class="highlight_image_areas_container">
         <img class="img_highlight_image_areas" src="#{image}" alt="Background Image">
         <div name="highlights">
@@ -66,8 +46,22 @@ module Jekyll
         </div>
       </div>
       HTML
+
+
+      rendered_output = Liquid::Template.parse(output).render(context)
+      rendered_output
     end
-    
+
+    private
+
+    def parse_attributes(markup)
+      attributes = {}
+      markup.scan(Liquid::TagAttributes) do |key, value|
+        attributes[key] = value
+      end
+      attributes
+    end
+
     def UpdatePageTitle(title)        
       # Update page title
       page = @context.registers[:page]
