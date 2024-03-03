@@ -19,10 +19,11 @@ module Jekyll
     def render(context)
       @context = context
       UpdatePageTitle("whattt")
-      output = read_template_file('highlight_image_areas.html')
+      output = read_template_file('highlight_image_areas.html')\
+      puts "Markup: #{output}"
       rendered_output = Liquid::Template.parse(output).render(build_context)
 
-      super + rendered_output
+      rendered_output
     end
 
     private
