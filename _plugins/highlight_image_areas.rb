@@ -19,12 +19,14 @@ module Jekyll
       @attributes['areas'] = '';
       puts "Markup: #{@attributes['img']}"
       # Parse parameters
-
           markup.scan(Liquid::TagAttributes) do |key, value|
               @attributes[key] = value
- 
-    
+       
 
+
+      #if @attributes['img'].nil?
+      #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
+      #end
       
       super
     end
