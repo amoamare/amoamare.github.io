@@ -68,7 +68,8 @@ EOS
   def blank?
     false
   end
-  
+end
+end
 end
 
 Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
