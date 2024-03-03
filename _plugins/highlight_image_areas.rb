@@ -51,15 +51,19 @@ highlighted_areas = [0, 1, 3, 4]  # Example highlighted areas
 output = <<~HTML
 <div class="container">
   <img class="image" src="#{image}" alt="Background Image">
-  {% if highlighted_areas %}
+  {% if highlight_areas_data %}
     {% for area_id in highlighted_areas %}
-      {% assign area_info = highlight_areas_data | where: "id", area_id | first %}
+      {% assign area_info = highlight_areas_data[area_id] %}
       {% if area_info %}
       <div class="highlight" style="top: {{ area_info['top'] }}%; left: {{ area_info['left'] }}%; width: {{ area_info['width'] }}%; height: {{ area_info['height'] }}%;">
         {{ area_info['id'] }}
       </div>  
+      {% else %}
+        <div>No area info found for ID: {{ area_id }}</div>
       {% endif %}
     {% endfor %}
+  {% else %}
+    <div>No highlight areas data found</div>
   {% endif %}
 </div>
 HTML
