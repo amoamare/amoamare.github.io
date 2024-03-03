@@ -25,9 +25,8 @@ page = context.registers[:page]
 # Get the highlighted_areas attribute from the page front matter
 highlighted_areas = page['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
 
-      
-      siteTitle = @attributes['siteTitle']
-      UpdatePageTitle(context, siteTitle) 
+highlight_image = page['highlight_image']
+
       
       site = context.registers[:site]    
       site_highlight_areas = site.data['highlight_areas'] || []
@@ -50,7 +49,7 @@ puts "Individual areas: #{selected_areas.inspect}"
 
       output = <<~HTML
       <div class="highlight_image_areas_container">
-        <img class="img_highlight_image_areas" src="#{image}" alt="Background Image">
+        <img class="img_highlight_image_areas" src="#{highlight_image}" ">
         <div name="highlights">
           {% if highlighted_areas %}
             {% assign selected_areas = highlighted_areas | split: ',' %}
@@ -91,12 +90,7 @@ puts "Individual areas: #{selected_areas.inspect}"
       end
       attributes
     end
-
-    def UpdatePageTitle(context, title)        
-      # Update page title
-      page = context.registers[:page]
-      page['title'] = title     
-    end
+    
   end
 end
 
