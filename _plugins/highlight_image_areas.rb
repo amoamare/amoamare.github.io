@@ -5,7 +5,7 @@ module Jekyll
     Syntax = /(#{Liquid::QuotedFragment}+)?/
 
     def initialize(tag_name, markup, tokens)
-  
+      super
     end
 
     def render(context)      
