@@ -19,7 +19,12 @@ module Jekyll
     def render(context)      
       context.registers[:highlight_img_areas] ||= Hash.new(0)
       
-      page = context.registers[:page]
+      # Access the page front matter directly
+page = context.registers[:page]
+
+# Get the highlighted_areas attribute from the page front matter
+highlighted_areas = page['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
+
       
       siteTitle = @attributes['siteTitle']
       UpdatePageTitle(context, siteTitle) 
@@ -27,7 +32,6 @@ module Jekyll
       site = context.registers[:site]    
       site_highlight_areas = site.data['highlight_areas'] || []
       
-      highlighted_areas = page.highlighted_areas #@attributes['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
       
       # Output the value of highlighted_areas for debugging
 puts "highlighted_areas: '#{highlighted_areas}'"
