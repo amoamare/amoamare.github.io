@@ -39,7 +39,7 @@ module Jekyll
       context['highlighted_areas'] = highlighted_areas 
 
       
-      context['site_highlight_areas'] = site_highlight_areas 
+      context['site_highlight_areas'] = @site_highlight_areas 
 
       image = @attributes['img']
 
@@ -47,7 +47,7 @@ module Jekyll
 
    
 
-    puts "Data: #{site_highlight_areas}"
+    puts "Data: #{@site_highlight_areas}"
       
       
 
