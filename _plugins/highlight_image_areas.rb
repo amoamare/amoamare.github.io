@@ -33,13 +33,13 @@ module Jekyll
       
       site = context.registers[:site]
     
-      @site_highlight_areas = site.data['highlight_areas'] || []
+      site_highlight_areas = site.data['highlight_areas'] || []
       
       highlighted_areas = [0,1,3,4]
       context['highlighted_areas'] = highlighted_areas 
 
       
-      context['site_highlight_areas'] = @site_highlight_areas 
+      context['site_highlight_areas'] = site_highlight_areas 
 
       image = @attributes['img']
 
@@ -47,23 +47,21 @@ module Jekyll
 
    
 
-    puts "Data: #{@site_highlight_areas}"
+    puts "Data: #{site_highlight_areas}"
       
       
 
       #  content = super
 
       output = <<~HTML
-      <div class="container">
+      <div class="highlight_image_areas">
         <img class="image" src="#{image}" alt="Background Image">
         <div name="highlights">
           {% if highlighted_areas %}
             {% assign selected_areas = highlighted_areas | split: ',' %}
             <div name="made it"></div>
             {% for area_id in selected_areas %}
-              <div name="made it2"></div>
-              {% assign area_info = site_highlight_areas | where: "id", area_id | first %}
-              
+              {% assign area_info = site_highlight_areas | where: "id", area_id | first %}              
               <div name="made it21"></div>
               {% if area_info %}
               <div name="made 2222"></div>
