@@ -78,6 +78,3 @@ end
 
 Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
 
-Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
-  doc.output = Liquid::Template.parse(doc.output).render("site" => doc.site)
-end
