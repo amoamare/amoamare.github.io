@@ -40,14 +40,14 @@ module Jekyll
 
       
       context['site_highlight_areas'] = site_highlight_areas 
+      
       image = @attributes['img']
 
       puts "Markup: #{image}"
 
-    # Access data from the _data folder
-    my_data = site.data['highlight_areas']  # Replace 'your_data_file' with the name of your data file
+   
 
-    puts "Data: #{my_data}"
+    puts "Data: #{site_highlight_areas}"
       
       
 
@@ -59,6 +59,7 @@ module Jekyll
         <div name="highlights">
           {% if highlighted_areas %}
             {% assign selected_areas = highlighted_areas | split: ',' %}
+            <div name="made it"></div>
             {% for area_id in selected_areas %}
               {% assign area_info = site_highlight_areas | where: "id", area_id | first %}
               {% if area_info %}
