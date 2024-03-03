@@ -68,6 +68,9 @@ module Jekyll
       </div>
       HTML
 
+      
+      puts "HTML: #{output}"
+
       # Parse the output string with Liquid to render any Liquid syntax
       rendered_output = Liquid::Template.parse(output).render(context)
 
