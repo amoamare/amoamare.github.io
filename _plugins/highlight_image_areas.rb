@@ -32,30 +32,30 @@ module Jekyll
         
         super
       end
-     
+
       def render(context)
         context.registers[:highlight_img_areas] ||= Hash.new(0)
 
         image = Dir.glob(@attributes['img'])
 
-        text = super
-       ## "<p>#{text} #{Time.now}</p>"
-          "
-          <div class=\"container\">
-          <img class=\"image\" src=\"#{ image }\" alt=\"Background Image\">
-          {% if page.highlighted_areas %}
-            {% assign selected_areas = page.highlighted_areas | split: ',' %}
-            {% for area_id in selected_areas %}
-              {% assign area_info = site.data.highlight_areas | where: \"id\", area_id | first %}
-              {% if area_info %}
-              <div class=\"asdf\" style=\"top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;\">
-              {{ area_info.id }}
-              </div>  
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-        </div>
-          "
+        
+  content = super
+  output = <<~EOS
+    <div class="card">
+      <div class="card-header" id="#{headingID}">
+        <h4 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="##{collapsedID}" aria-expanded="false" aria-controls="#{collapsedID}">
+            <span class="plus-minus-wrapper"><div class="plus-minus"></div></span><span class="collapse-title">#{@title}</span>
+          </button>
+        </h4>
+      </div>
+      <div id="#{collapsedID}" class="collapse" aria-labelledby="#{headingID}" data-parent="##{accordionID}">
+        <div class="card-body">#{content}</div>
+      </div>
+    </div>
+  EOS
+
+  output
       end
   
     end
