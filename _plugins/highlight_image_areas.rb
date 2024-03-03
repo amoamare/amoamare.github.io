@@ -7,26 +7,13 @@
 
 module Jekyll
   class HighlightImageAreasBlock < Liquid::Block
-
     include Liquid::StandardFilters
     Syntax = /(#{Liquid::QuotedFragment}+)?/
 
     def initialize(tag_name, markup, tokens)
-      puts "Markup: #{markup}"
       @attributes = {}
-      # Parse parameters
       markup.scan(Liquid::TagAttributes) do |key, value|
-        @attributes[key] = value
-       
-      puts "Markup: #{@attributes['img']}"
-
-
-      #@highlighted_areas = "0,1,3,4";
-
-      #if @attributes['img'].nil?
-      #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
-      #end
-      
+        @attributes[key] = value      
       super
     end
 
@@ -36,7 +23,7 @@ module Jekyll
     
       site_highlight_areas = site.data['highlight_areas']
       
-      highlighted_areas = "0,1,3,4";
+      @highlighted_areas = "0,1,3,4";
       image = @attributes['img']
       
       
@@ -59,15 +46,8 @@ module Jekyll
       # Return the rendered output
       rendered_output
     end
-    
-
-  # Override blank? method to always return true, indicating that the block is blank
-  def blank?
-    false
+        
   end
-end
-end
-end
 
 Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
 
