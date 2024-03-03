@@ -32,6 +32,8 @@ module Jekyll
     def render(context)      
       context.registers[:highlight_img_areas] ||= Hash.new(0)
       site = context.registers[:site]
+      doc = context.registers[:page]
+
       site_highlight_areas = site.data['highlight_areas']
       image = @attributes['img']
 
@@ -76,5 +78,5 @@ end
 Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
 
 Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
-  doc.output = Liquid::Template.parse(doc.output).render("site" => site)
+  doc.output = Liquid::Template.parse(doc.output).render("site" => doc.site)
 end
