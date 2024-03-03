@@ -2,6 +2,7 @@
 # {{ page.title }}
 
 test {{ include.errorCode }}
+lighted_areas:{{ page.highlighted_areas }}
 
 ### Table of Contents
 1. [Overview](#overview)
