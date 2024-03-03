@@ -29,5 +29,5 @@ Testing Plugin
 
 {% assign requestId = request.params.error %}
 
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg siteTitle:{{ error }} %}
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg siteTitle:{{ requestId }} %}
 {% endhighlight_img_areas %}
