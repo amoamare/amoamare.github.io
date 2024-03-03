@@ -32,7 +32,7 @@ Testing Plugin
 
 ## Original 
 
-<div class="container">
+<div class="highlight_image_areas_container">
   <img class="img_highlight_image_areas" src="{{ page.background_image }}" alt="Background Image">
   {% if page.highlighted_areas %}
     {% assign selected_areas = page.highlighted_areas | split: ',' %}

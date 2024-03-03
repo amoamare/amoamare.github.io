@@ -1,5 +1,5 @@
 /* Container to position the image and overlaying divs */
-div.container {
+div.highlight_image_areas_container {
     position: relative;
     width: 100%; /* Adjust as needed */
     height: auto; /* Set height to auto for responsive resizing */

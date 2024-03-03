@@ -32,7 +32,7 @@ module Jekyll
       image = @attributes['img']
 
       output = <<~HTML
-      <div class="highlight_image_areas">
+      <div class="highlight_image_areas_container">
         <img class="img_highlight_image_areas" src="#{image}" alt="Background Image">
         <div name="highlights">
           {% if highlighted_areas %}
