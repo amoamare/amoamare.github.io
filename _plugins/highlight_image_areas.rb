@@ -44,7 +44,7 @@ module Jekyll
     end
 
     def read_template_file(filename)
-      file_path = File.join("_includes", filename)
+      file_path = File.join("/_includes", filename)
       File.read(file_path)
     end
     
