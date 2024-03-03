@@ -35,11 +35,12 @@ module Jekyll
       site = context.registers[:site]
     
       site_highlight_areas = site.data['highlight_areas']
-      image = @attributes['img']
       
       highlighted_areas = "0,1,3,4";
+      image = @attributes['img']
       
-      output = <<~EOS
+      
+      output = <<~HTML
       <div class="container">
         <img class="image" src="#{image}" alt="Background Image">
         {% if highlighted_areas %}
@@ -54,11 +55,11 @@ module Jekyll
           {% endfor %}
         {% endif %}
       </div>
-      EOS
+      HTML
     
       # Parse the output string with Liquid to render any Liquid syntax
-      #rendered_output = Liquid::Template.parse(output).render(context)
-      rendered_output = Liquid::Template.parse(output).render('highlighted_areas' => highlighted_areas, 'context' => context)
+      rendered_output = Liquid::Template.parse(output).render(context)
+      #rendered_output = Liquid::Template.parse(output).render('highlighted_areas' => highlighted_areas, 'context' => context)
       # Return the rendered output
       rendered_output
     end
