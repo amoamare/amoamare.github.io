@@ -41,18 +41,20 @@ module Jekyll
         
   content = super
   output = <<~EOS
-    <div class="card">
-      <div class="card-header" id="">
-        <h4 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="">
-            <span class="plus-minus-wrapper"><div class="plus-minus"></div></span><span class="collapse-title"></span>
-          </button>
-        </h4>
-      </div>
-      <div id="" class="collapse" aria-labelledby="" data-parent="#">
-        <div class="card-body"></div>
-      </div>
-    </div>
+  <div class="container">
+    <img class="image" src="#{image}" alt="Background Image">
+    {% if page.highlighted_areas %}
+      {% assign selected_areas = page.highlighted_areas | split: ',' %}
+      {% for area_id in selected_areas %}
+        {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
+        {% if area_info %}
+        <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
+        {{ area_info.id }}
+        </div>  
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
   EOS
 
   output
