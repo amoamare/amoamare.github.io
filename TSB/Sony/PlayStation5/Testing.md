@@ -1,7 +1,7 @@
 
 # Error Code:  {{ page.title }}
 
-test {{ page.errorCode }}
+test {{ include.errorCode }}
 
 ### Table of Contents
 1. [Overview](#overview)
