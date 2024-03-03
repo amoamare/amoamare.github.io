@@ -48,6 +48,7 @@ module Jekyll
     end
         
   end
+end
 
 Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
 
