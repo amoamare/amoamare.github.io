@@ -16,9 +16,9 @@ module Jekyll
       context.registers[:highlight_img_areas] ||= Hash.new(0)
       site = context.registers[:site]
     
-      site_highlight_areas = site.data['highlight_areas']
+      @site_highlight_areas = site.data['highlight_areas']
       
-      highlighted_areas = "0,1,3,4"
+      @highlighted_areas = "0,1,3,4"
       image = @attributes['img']
       
       
