@@ -30,11 +30,18 @@ module Jekyll
 
     def render(context)      
       context.registers[:highlight_img_areas] ||= Hash.new(0)
+      
+      site = context.registers[:site]
+    
+      site_highlight_areas = site.data['highlight_areas']
+      
+      @highlighted_areas = "0,1,3,4";
+
       image = @attributes['img']
 
       puts "Markup: #{image}"
       
-      highlighted_areas = "0,1,3,4";
+      
 
       #  content = super
 
@@ -70,3 +77,7 @@ module Jekyll
 end
 
 Liquid::Template.register_tag('highlight_img_areas', Jekyll::HighlightImageAreasBlock)
+
+Jekyll::Hooks.register [:pages, :documents], :post_render do |doc|
+  doc.output = Liquid::Template.parse(doc.output).render("site" => doc.site)
+end
