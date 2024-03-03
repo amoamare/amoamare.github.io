@@ -31,47 +31,52 @@ module Jekyll
     def render(context)      
       context.registers[:highlight_img_areas] ||= Hash.new(0)
       
-# Retrieve site object from context
-site = context.registers[:site]
+      site = context.registers[:site]
     
-# Retrieve image path from attributes
-image = @attributes['img']
+      site_highlight_areas = site.data['highlight_areas'] || []
+      
+      highlighted_areas = [0,1,3,4]
+      context['highlighted_areas'] = highlight_areas_data
 
-puts "Markup: #{image}"
+      image = @attributes['img']
 
-# Access data from the _data folder
-highlight_areas_data = site.data['highlight_areas'] || []
+      puts "Markup: #{image}"
 
-puts "Data: #{highlight_areas_data}"
+    # Access data from the _data folder
+    my_data = site.data['highlight_areas']  # Replace 'your_data_file' with the name of your data file
 
-# Define areas to be highlighted
-highlighted_areas = [0, 1, 3, 4]  # Example highlighted areas
+    puts "Data: #{my_data}"
+      
+      
 
-# Generate HTML output
-output = <<~HTML
-<div class="container">
-  <img class="image" src="#{image}" alt="Background Image">
-  {% if highlight_areas_data %}
-    {% for area_id in highlighted_areas %}
-      {% assign area_info = highlight_areas_data[area_id] %}
-      {% if area_info %}
-      <div class="highlight" style="top: {{ area_info['top'] }}%; left: {{ area_info['left'] }}%; width: {{ area_info['width'] }}%; height: {{ area_info['height'] }}%;">
-        {{ area_info['id'] }}
-      </div>  
-      {% else %}
-        <div>No area info found for ID: {{ area_id }}</div>
-      {% endif %}
-    {% endfor %}
-  {% else %}
-    <div>No highlight areas data found</div>
-  {% endif %}
-</div>
-HTML
+      #  content = super
+
+      output = <<~HTML
+      <div class="container">
+        <img class="image" src="#{image}" alt="Background Image">
+        <div name="highlights">
+          {% if #{highlighted_areas} %}
+            {% assign selected_areas = #{highlighted_areas} | split: ',' %}
+            {% for area_id in selected_areas %}
+              {% assign area_info = #{my_data} | where: "id", area_id | first %}
+              {% if area_info %}
+              <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
+              {{ area_info.id }}
+              </div>  
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <div>No highlight areas data found</div>
+          {% endif %}
+        </div>
+      </div>
+      HTML
 
       # Parse the output string with Liquid to render any Liquid syntax
       rendered_output = Liquid::Template.parse(output).render(context)
 
       # Return the rendered output
+      super
       rendered_output
     end
 
