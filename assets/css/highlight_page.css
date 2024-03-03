@@ -6,7 +6,7 @@ div.container {
 }
     
 /* Image to be overlaid */
-highlight_image_areas.image {
+img.highlight_image_areas {
     display: block;
     width: 100%; /* Set width to 100% to fill the container */
     height: auto; /* Set height to auto for responsive resizing */

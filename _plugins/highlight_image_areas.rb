@@ -59,7 +59,9 @@ module Jekyll
         <div name="highlights">
           {% if highlighted_areas %}
             {% assign selected_areas = highlighted_areas | split: ',' %}
-            <div name="made it"></div>
+            <div name="made it">
+            {{selected_areas}}
+            </div>
             {% for area_id in selected_areas %}
               {% assign area_info = site_highlight_areas | where: "id", area_id | first %}              
               <div name="made it21"></div>
