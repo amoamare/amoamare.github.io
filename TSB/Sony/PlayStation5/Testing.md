@@ -1,8 +1,6 @@
 
 # {{ page.title }}
 
-#test {{ include.errorCode }}
-
 ### Table of Contents
 1. [Overview](#overview)
 2. [Models](#models)
@@ -14,7 +12,7 @@
 6. [Parts Information](#parts-information)
 
 # GDDR6 Memory Banks No Reponse
-{% assign variable = page.highlighted_areas %}
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg %}
+
+{% highlight_img_areas %}
 {% endhighlight_img_areas %}
 
