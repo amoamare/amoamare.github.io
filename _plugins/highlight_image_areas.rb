@@ -44,8 +44,7 @@ module Jekyll
     # Access data from the _data folder
     my_data = site.data['highlight_areas']  # Replace 'your_data_file' with the name of your data file
 
-    # Add custom variables to the Liquid context
-    context['site.highlight_areas'] = my_data
+    puts "Data: #{my_data}"
       
       
 
@@ -57,7 +56,7 @@ module Jekyll
         {% if #{highlighted_areas} %}
           {% assign selected_areas = #{highlighted_areas} | split: ',' %}
           {% for area_id in selected_areas %}
-            {% assign area_info = site.highlight_areas | where: "id", area_id | first %}
+            {% assign area_info = #{my_data} | where: "id", area_id | first %}
             {% if area_info %}
             <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
             {{ area_info.id }}
