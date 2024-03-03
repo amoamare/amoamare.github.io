@@ -28,21 +28,3 @@ Testing Plugin
 
 {% highlight_img_areas img:/assets/img/ps5motherboard.jpg %}
 {% endhighlight_img_areas %}
-
-
-## Original 
-
-<div class="highlight_image_areas_container">
-  <img class="img_highlight_image_areas" src="{{ page.background_image }}" alt="Background Image">
-  {% if page.highlighted_areas %}
-    {% assign selected_areas = page.highlighted_areas | split: ',' %}
-    {% for area_id in selected_areas %}
-      {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
-      {% if area_info %}
-         <div class="highlight" name="bank-{{ area_info.id }}" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
-      {{ area_info.id }}
-      </div>  
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-</div>

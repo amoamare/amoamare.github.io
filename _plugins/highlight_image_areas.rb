@@ -44,7 +44,7 @@ module Jekyll
 
     def read_template_file(filename)
       includes_dir = @context.registers[:site].in_source_dir('_includes')
-      file_path = File.join(includes_dir, filename)
+      file_path = File.join("/_includes", filename)
       File.read(file_path)
     end
   end
