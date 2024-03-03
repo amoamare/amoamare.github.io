@@ -26,6 +26,17 @@ module Jekyll
       
       highlighted_areas = @attributes['highlighted_areas'].to_s.strip
       
+      # Output the value of highlighted_areas for debugging
+puts "highlighted_areas: '#{highlighted_areas}'"
+
+# Split the string into individual areas
+selected_areas = highlighted_areas.split(',')
+
+# Output the individual areas for debugging
+puts "Individual areas: #{selected_areas.inspect}"
+
+      
+      
       context['highlighted_areas'] = highlighted_areas      
       context['site_highlight_areas'] = site_highlight_areas       
       image = @attributes['img']
