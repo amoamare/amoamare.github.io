@@ -36,7 +36,7 @@ module Jekyll
       site_highlight_areas = site.data['highlight_areas'] || []
       
       highlighted_areas = [0,1,3,4]
-      context['highlighted_areas'] = highlight_areas_data
+      context['highlighted_areas'] = highlighted_areas 
 
       image = @attributes['img']
 
