@@ -65,6 +65,11 @@ module Jekyll
 
   output
       end
+
+    # Override blank? method to always return true, indicating that the block is blank
+    def blank?
+      true
+    end
   
     end
   end
