@@ -19,17 +19,12 @@ module Jekyll
       @attributes['areas'] = '';
       puts "Markup: #{@attributes['img']}"
       # Parse parameters
-      if markup =~ Syntax
+
           markup.scan(Liquid::TagAttributes) do |key, value|
               @attributes[key] = value
-          end
-      else
-          raise SyntaxError.new("Bad parameters given to 'highlight_img_areas' plugin.")
-      end
+ 
+    
 
-      #if @attributes['img'].nil?
-      #   raise SyntaxError.new("You did not specify a directory for highlight_img_areas.")
-      #end
       
       super
     end
@@ -40,30 +35,31 @@ module Jekyll
       puts "Markup: #{image}"
       
 
-        site = context.registers[:site]
-        converter = site.find_converter_instance(::Jekyll::Converters::Markdown)
-        content = converter.convert(super)
 
 #  content = super
 
-      output = <<~EOS
-      <div class="container">
-        <img class="image" src="#{image}" alt="Background Image">
-        {% if highlighted_areas %}
-          {% assign selected_areas = highlighted_areas | split: ',' %}
-          {% for area_id in selected_areas %}
-            {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
-            {% if area_info %}
-            <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
-            {{ area_info.id }}
-            </div>  
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      </div>
-      EOS
+output = <<~EOS
+<div class="container">
+  <img class="image" src="#{image}" alt="Background Image">
+  {% if highlighted_areas %}
+    {% assign selected_areas = highlighted_areas | split: ',' %}
+    {% for area_id in selected_areas %}
+      {% assign area_info = site.data.highlight_areas | where: "id", area_id | first %}
+      {% if area_info %}
+      <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
+      {{ area_info.id }}
+      </div>  
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
+EOS
 
-        output
+    # Parse the output string with Liquid to render any Liquid syntax
+    rendered_output = Liquid::Template.parse(output).render(context)
+
+    # Return the rendered output
+    rendered_output
     end
 
   # Override blank? method to always return true, indicating that the block is blank
