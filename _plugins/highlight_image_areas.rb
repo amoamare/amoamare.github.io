@@ -46,17 +46,7 @@ module Jekyll
       output = <<~HTML
       <div class="container">
         <img class="image" src="#{image}" alt="Background Image">
-        {% if highlighted_areas %}
-        {% assign selected_areas = highlighted_areas | split: ',' %}
-        {% for area_id in selected_areas %}
-          {% assign area_info = site_highlight_areas | where: "id", area_id | first %}
-          {% if area_info %}
-            <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
-              {{ area_info.id }}
-            </div>  
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+      
 
       </div>
       HTML
