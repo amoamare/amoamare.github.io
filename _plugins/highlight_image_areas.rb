@@ -42,15 +42,15 @@ module Jekyll
   content = super
   output = <<~EOS
     <div class="card">
-      <div class="card-header" id="#{headingID}">
+      <div class="card-header" id="">
         <h4 class="mb-0">
-          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="##{collapsedID}" aria-expanded="false" aria-controls="#{collapsedID}">
-            <span class="plus-minus-wrapper"><div class="plus-minus"></div></span><span class="collapse-title">#{@title}</span>
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="" aria-expanded="false" aria-controls="">
+            <span class="plus-minus-wrapper"><div class="plus-minus"></div></span><span class="collapse-title"></span>
           </button>
         </h4>
       </div>
-      <div id="#{collapsedID}" class="collapse" aria-labelledby="#{headingID}" data-parent="##{accordionID}">
-        <div class="card-body">#{content}</div>
+      <div id="" class="collapse" aria-labelledby="" data-parent="#">
+        <div class="card-body"></div>
       </div>
     </div>
   EOS
