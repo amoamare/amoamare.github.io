@@ -16,4 +16,4 @@ permalink: /tsb/sony/playstation5/Testing/
 Testing Plugin
 
 {% highlight_img_areas img:"/assets/img/ps5motherboard.jpg" %}
-{% highlight_img_areas img:"/path/to/image.jpg" %}
+{% endhighlight_img_areas %}
