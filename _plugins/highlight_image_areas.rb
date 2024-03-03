@@ -12,6 +12,7 @@ module Jekyll
       Syntax = /(#{Liquid::QuotedFragment}+)?/
 
       def initialize(tag_name, markup, tokens)
+        
         puts "Markup: #{markup}"
         img = @attributes['img']
         @attributes = {}
@@ -36,17 +37,19 @@ module Jekyll
       end
 
       def render(context)
-        image = Dir.glob(@attributes['img']).first
+        context.registers[:highlight_img_areas] ||= Hash.new(0)
 
+        image = Dir.glob(@attributes['img'])
         puts "Markup: #{image}"
         
+      # Access custom data via context
+      page_data = context['page']
+      highlighted_areas = page_data['highlighted_areas']
 
-
-#  content = super
-
+  content = super
   output = <<~EOS
   <div class="container">
-    <img class="image" src="#{img}" alt="Background Image">
+    <img class="image" src="#{image}" alt="Background Image">
     {% if highlighted_areas %}
       {% assign selected_areas = highlighted_areas | split: ',' %}
       {% for area_id in selected_areas %}
@@ -61,17 +64,8 @@ module Jekyll
   </div>
   EOS
 
-      # Parse the output string with Liquid to render any Liquid syntax
-      rendered_output = Liquid::Template.parse(output).render(context)
-
-      # Return the rendered output
-      rendered_output
+  output
       end
-
-    # Override blank? method to always return true, indicating that the block is blank
-    def blank?
-      false
-    end
   
     end
   end
