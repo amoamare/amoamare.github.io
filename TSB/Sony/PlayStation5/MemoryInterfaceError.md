@@ -35,5 +35,7 @@ Testing Plugin
 
 ## Academic Integrity
 
-```{include} Testing.md
-```
+
+
+{% include_relative Testing.md %}
+
