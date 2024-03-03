@@ -16,5 +16,5 @@ lighted_:"{{ page.highlighted_areas }}"
 
 # GDDR6 Memory Banks No Reponse
 
-{% highlight_img_areas img:/assets/img/ps5motherboard.jpg highlighted_areas:"{{ page.highlighted_areas }}" %}
+{% highlight_img_areas img:/assets/img/ps5motherboard.jpg, highlighted_areas:"{{ page.highlighted_areas }}" %}
 {% endhighlight_img_areas %}
