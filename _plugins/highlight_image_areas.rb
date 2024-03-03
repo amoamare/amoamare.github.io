@@ -43,7 +43,7 @@ module Jekyll
     end
 
     def read_template_file(filename)
-      File.read(File.join(@context.registers[:site].config['source'], '_includes', filename))
+      File.read(File.join('_includes', filename))
     end
   end
 end
