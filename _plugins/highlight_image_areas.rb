@@ -74,7 +74,7 @@ module Jekyll
       #rendered_output = Liquid::Template.parse(output).render(context)
 
       # Return the rendered output
-      output
+      super
     end
 
     # Override blank? method to always return true, indicating that the block is blank
