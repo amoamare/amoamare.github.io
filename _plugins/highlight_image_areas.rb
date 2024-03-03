@@ -38,6 +38,8 @@ module Jekyll
       highlighted_areas = [0,1,3,4]
       context['highlighted_areas'] = highlighted_areas 
 
+      
+      context['site_highlight_areas'] = site_highlight_areas 
       image = @attributes['img']
 
       puts "Markup: #{image}"
@@ -58,7 +60,7 @@ module Jekyll
           {% if highlighted_areas %}
             {% assign selected_areas = highlighted_areas | split: ',' %}
             {% for area_id in selected_areas %}
-              {% assign area_info = #{my_data} | where: "id", area_id | first %}
+              {% assign area_info = site_highlight_areas | where: "id", area_id | first %}
               {% if area_info %}
               <div class="highlight" style="top: {{ area_info.top }}%; left: {{ area_info.left }}%; width: {{ area_info.width }}%; height: {{ area_info.height }}%;">
               {{ area_info.id }}
