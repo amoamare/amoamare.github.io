@@ -31,3 +31,9 @@ Testing Plugin
 
 {% highlight_img_areas img:/assets/img/ps5motherboard.jpg siteTitle:{{ requestId }} %}
 {% endhighlight_img_areas %}
+
+
+## Academic Integrity
+
+```{include} Testing.md
+```
