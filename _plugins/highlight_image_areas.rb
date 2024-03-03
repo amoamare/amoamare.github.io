@@ -37,7 +37,7 @@ module Jekyll
       def render(context)
         context.registers[:highlight_img_areas] ||= Hash.new(0)
 
-        image = Dir.glob(@attributes['img'])
+        image = Dir.glob(@attributes['img']).first
 
         
       # Access custom data via context
