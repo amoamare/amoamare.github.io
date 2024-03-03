@@ -12,19 +12,15 @@ module Jekyll
     Syntax = /(#{Liquid::QuotedFragment}+)?/
 
     def initialize(tag_name, markup, tokens)
-      puts "Markup: #{markup}"
-      @attributes = {}
-      # Parse parameters
-      markup.scan(Liquid::TagAttributes) do |key, value|
-        @attributes[key] = value
-      end      
+      @attributes = parse_attributes(markup)
       super
     end
 
     def render(context)      
       context.registers[:highlight_img_areas] ||= Hash.new(0)     
+      siteTitle = @attributes['siteTitle']
+      UpdatePageTitle(context, siteTitle) 
       
-      UpdatePageTitle(context,"whattt") 
       site = context.registers[:site]    
       site_highlight_areas = site.data['highlight_areas'] || []
       

@@ -8,6 +8,7 @@ includeImageHighlights: true
 subtitle: Technical Service Bulletin
 permalink: /tsb/sony/playstation5/MemoryInterfaceError/
 css: /assets/css/highlight_page.css
+js: /assets/js/consoleservicetool.js
 ---
 
 # Error Code: 
@@ -27,4 +28,3 @@ css: /assets/css/highlight_page.css
 Testing Plugin
 
 {% highlight_img_areas img:/assets/img/ps5motherboard.jpg %}
-{% endhighlight_img_areas %}
