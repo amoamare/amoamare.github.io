@@ -8,18 +8,23 @@
 module Jekyll
   class HighlightImageAreasBlock < Liquid::Block
 
-    include Liquid::StandardFilters    
+    include Liquid::StandardFilters
     Syntax = /(#{Liquid::QuotedFragment}+)?/
 
     def initialize(tag_name, markup, tokens)
+      puts "Markup: #{markup}"
+      @attributes = {}
+      # Parse parameters
+      markup.scan(Liquid::TagAttributes) do |key, value|
+        @attributes[key] = value
+      end      
       super
-      @attributes = parse_attributes(markup)
     end
 
-    def render(context)
+    def render(context)      
       context.registers[:highlight_img_areas] ||= Hash.new(0)     
-      UpdatePageTitle(context, "whattt")
-
+      
+      UpdatePageTitle(context,"whattt") 
       site = context.registers[:site]    
       site_highlight_areas = site.data['highlight_areas'] || []
       
@@ -47,10 +52,20 @@ module Jekyll
       </div>
       HTML
 
-
+      # Parse the output string with Liquid to render any Liquid syntax
       rendered_output = Liquid::Template.parse(output).render(context)
+
+      # Return the rendered output
+      super
       rendered_output
     end
+
+    # Override blank? method to always return true, indicating that the block is blank
+    def blank?
+      false
+    end
+
+    
 
     private
 
