@@ -6,8 +6,10 @@ module Jekyll
 
     def initialize(tag_name, markup, tokens)
       @attributes = {}
-      markup.scan(Liquid::TagAttributes) do |key, value|
-        @attributes[key] = value      
+      markup.scan(Liquid::TagAttributes) 
+        do |key, value|
+          @attributes[key] = value    
+        end  
       super
     end
 
