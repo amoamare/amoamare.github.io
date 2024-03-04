@@ -37,10 +37,13 @@ module Jekyll
       # Create an array to hold the HTML for each area
       area_html = []
 
+      puts "before loop"
       # Loop through selected areas and build HTML for each
       selected_areas.each do |area_id|
-       # Ensure site_highlight_areas[area_id] is not nil
-        area_info = site_highlight_areas[area_id]
+        puts "before loo1p"
+        area_info = site_highlight_areas.find { |area| area['id'].to_s == area_id.to_s }
+        
+      puts "before l123oop"
         if area_info
           area_html << "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{area_info['id']}</div>"
         end
