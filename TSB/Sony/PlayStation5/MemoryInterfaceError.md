@@ -13,6 +13,7 @@
 
 # GDDR6 Memory Banks No Reponse
 
-{% highlight_img_areas EDM001,GDDR6 %}
+### EDM-001, 002, 003
+{% highlight_img_areas RegionLocations,EDM001,GDDR6 /assets/img/ps5motherboard.jpg %}
 {% endhighlight_img_areas %}
 
