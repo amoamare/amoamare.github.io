@@ -25,7 +25,7 @@ module Jekyll
       highlighted_areas = page['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
       highlight_image = page['highlight_image']            
       site = context.registers[:site]    
-      site_highlight_areas = site.data.dictionary['EDM001_Memory_Locations'] || []
+      site_highlight_areas = site.data['EDM001_Memory_Locations'] || []
 
       # Output the value of highlighted_areas for debugging
       puts "site_highlight_areas: '#{site_highlight_areas}'"
