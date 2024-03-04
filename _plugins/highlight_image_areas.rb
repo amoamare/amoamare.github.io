@@ -1,6 +1,5 @@
-
 #usage:
-#{% highlight_img_areas directory:images iterator:image filter:*.jpg sort:descending %}
+#{% highlight_img_areas %}
 #   <img src="{{ image }}" />
 #{% highlight_img_areas %}
 
@@ -20,32 +19,25 @@ module Jekyll
       context.registers[:highlight_img_areas] ||= Hash.new(0)
       
       # Access the page front matter directly
-page = context.registers[:page]
-
-# Get the highlighted_areas attribute from the page front matter
-highlighted_areas = page['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
-
-highlight_image = page['highlight_image']
-
+      page = context.registers[:page]
       
+      # Get the highlighted_areas attribute from the page front matter
+      highlighted_areas = page['highlighted_areas'].to_s.strip.gsub(/^\"|\"$/, '')
+      highlight_image = page['highlight_image']            
       site = context.registers[:site]    
-      site_highlight_areas = site.data['highlight_areas'] || []
-      
-      
+      site_highlight_areas = site.data.dictionary['EDM001_Memory_Locations'] || []
+
       # Output the value of highlighted_areas for debugging
-puts "highlighted_areas: '#{highlighted_areas}'"
+      puts "site_highlight_areas: '#{site_highlight_areas}'"
 
-# Split the string into individual areas
-selected_areas = highlighted_areas.split(',')
+      # Split the string into individual areas
+      selected_areas = highlighted_areas.split(',')
 
-# Output the individual areas for debugging
-puts "Individual areas: #{selected_areas.inspect}"
+      # Output the individual areas for debugging
+      puts "Individual areas: #{selected_areas.inspect}"
 
-      
-      
       context['highlighted_areas'] = highlighted_areas      
-      context['site_highlight_areas'] = site_highlight_areas       
-      image = @attributes['img']
+      context['site_highlight_areas'] = site_highlight_areas 
 
       output = <<~HTML
       <div class="highlight_image_areas_container">
