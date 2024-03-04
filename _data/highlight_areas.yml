@@ -1,41 +1,43 @@
-EDM001_Memory_Locations:
-- id: 1
-  top: 34
-  left: 47.75
-  width: 6
-  height: 7
-- id: 2
-  top: 28.6
-  left: 55.3
-  width: 5
-  height: 6
-- id: 3
-  top: 28.6
-  left: 62.3
-  width: 5
-  height: 6
-- id: 4
-  top: 34
-  left: 68.75
-  width: 6
-  height: 7
-- id: 5
-  top: 57
-  left: 68.75
-  width: 6
-  height: 7
-- id: 6
-  top: 63.5
-  left: 62.3
-  width: 5
-  height: 6
-- id: 7
-  top: 63.5
-  left: 55.3
-  width: 5
-  height: 6
-- id: 8
-  top: 57
-  left: 47.75
-  width: 6
-  height: 7
+RegionLocations:
+  EDM001:
+    GDDR6:
+      - id: 1
+        top: 34
+        left: 47.75
+        width: 6
+        height: 7
+      - id: 2
+        top: 28.6
+        left: 55.3
+        width: 5
+        height: 6
+      - id: 3
+        top: 28.6
+        left: 62.3
+        width: 5
+        height: 6
+      - id: 4
+        top: 34
+        left: 68.75
+        width: 6
+        height: 7
+      - id: 5
+        top: 57
+        left: 68.75
+        width: 6
+        height: 7
+      - id: 6
+        top: 63.5
+        left: 62.3
+        width: 5
+        height: 6
+      - id: 7
+        top: 63.5
+        left: 55.3
+        width: 5
+        height: 6
+      - id: 8
+        top: 57
+        left: 47.75
+        width: 6
+        height: 7
