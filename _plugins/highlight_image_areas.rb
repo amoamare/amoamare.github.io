@@ -41,7 +41,8 @@ module Jekyll
       # Loop through selected areas and build HTML for each
       selected_areas.each do |area_id|
         puts "before loo1p #{area_id}"
-        area_info = site_highlight_areas.find { |area| area['id'] == area_id }
+        area_info = region_locations.dig('EDM001', 'GDDR6').find { |area| area['id'].to_s == area_id.to_s }
+   
         
       puts "before l123oop"
         if area_info
