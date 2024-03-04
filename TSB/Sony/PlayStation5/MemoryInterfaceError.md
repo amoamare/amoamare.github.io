@@ -13,6 +13,6 @@
 
 # GDDR6 Memory Banks No Reponse
 
-{% highlight_img_areas EDM001 %}
+{% highlight_img_areas EDM001,GDDR6 %}
 {% endhighlight_img_areas %}
 
