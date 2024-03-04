@@ -40,8 +40,9 @@ module Jekyll
       puts "before loop"
       # Loop through selected areas and build HTML for each
       selected_areas.each do |area_id|
-        puts "before loo1p"
-        area_info = site_highlight_areas.find { |area| area['id'].to_s == area_id.to_s }
+        puts "before loo1p #{area['id']}"
+        puts "before loo1p #{area_id['id']}"
+        area_info = site_highlight_areas.find { |area| area['id'] == area_id }
         
       puts "before l123oop"
         if area_info
