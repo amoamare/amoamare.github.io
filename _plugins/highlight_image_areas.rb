@@ -16,8 +16,8 @@ module Jekyll
       page = context.registers[:page]
       highlighted_regions = page['highlighted_regions'].to_s.strip.gsub(/^\"|\"$/, '').split(',')
 
-      puts "highlighted_regions areas: #{highlighted_regions}"
-
+      puts "Highlighted Regions: #{highlighted_regions.inspect}"
+      
       area_html = region_data['Regions'].select do |area_info|
         puts "Area HTML: #{area_html.inspect}"
         highlighted_regions.include?(area_info['id'])
