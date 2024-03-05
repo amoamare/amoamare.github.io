@@ -15,7 +15,7 @@ module Jekyll
       # Access the page front matter directly
       page = context.registers[:page]
       highlighted_regions = page['highlighted_regions']
-      puts "highlighted_regions: #{highlighted_regions.inspect}"
+      puts "highlighted_regions: #{highlighted_regions}"
 
       puts "Region Data: #{region_data['Regions'].inspect}"
 
