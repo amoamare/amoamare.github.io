@@ -1,14 +1,6 @@
-#usage:
-#{% highlight_img_areas %}
-#   <img src="{{ image }}" />
-#{% highlight_img_areas %}
-
-
 module Jekyll
   class HighlightImageAreasBlock < Liquid::Block
-
     include Liquid::StandardFilters
-    Syntax = /(#{Liquid::QuotedFragment}+)?/
 
     def initialize(tag_name, markup, tokens)
       @attributes = parse_attributes(markup)
@@ -18,24 +10,24 @@ module Jekyll
 
     def render(context)
       region_data = context[@region]
+      return nil unless region_data && region_data['Regions']
+
       # Access the page front matter directly
       page = context.registers[:page]
       highlighted_regions = page['highlighted_regions'].to_s.strip.gsub(/^\"|\"$/, '').split(',')
-      
 
-      area_html = region_data.dig('Regions')&.map do |area_info|
-      next unless highlighted_regions.include?(area_info['id'])
-        id_html = area_info['displayId'] ? area_info['id'] : ''
+      area_html = region_data['Regions'].select do |area_info|
+      highlighted_regions.include?(area_info['id'])
+      end.map do |area_info|
+        id_html = area_info['displayId'] == true ? area_info['id'] : nil
         "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{id_html}</div>"
       end
-
-      area_html_string = area_html&.compact&.join("\n")
 
       output = <<~HTML
         <div class="highlight_image_areas_container">
           <img class="img_highlight_image_areas" alt="img" src="#{region_data['Image']}">
           <div name="highlights">
-            #{area_html_string}
+            #{area_html.join("\n")}
           </div>
         </div>
       HTML
@@ -48,8 +40,6 @@ module Jekyll
       false
     end
 
-    
-
     private
 
     def parse_attributes(markup)
@@ -59,7 +49,6 @@ module Jekyll
       end
       attributes
     end
-    
   end
 end
 
