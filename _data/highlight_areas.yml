@@ -1,13 +1,13 @@
 EDM001:
   GDDR6:
-    image: "/assets/img/ps5motherboard.jpg"
-    Locations:
+    Image: "/assets/img/ps5motherboard.jpg"
+    Regions:
       - id: 1
         top: 34
         left: 47.75
         width: 6
         height: 7
-        displayId: true
+        displayId: false
       - id: 2
         top: 28.6
         left: 55.3

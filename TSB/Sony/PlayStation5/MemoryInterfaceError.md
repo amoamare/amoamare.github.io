@@ -14,8 +14,6 @@
 # GDDR6 Memory Banks No Reponse
 
 ### EDM-001, 002, 003
-{% assign region = site.data.highlight_areas.EDM001.GDDR6 %}
-
 {% highlight_img_areas site.data.highlight_areas.EDM001.GDDR6 %}
 {% endhighlight_img_areas %}
 

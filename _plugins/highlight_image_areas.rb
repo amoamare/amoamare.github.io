@@ -26,7 +26,7 @@ module Jekyll
       # Check if region_data is a Hash
       if region_data.is_a?(Hash)
         # Output each location within the region
-          region_data["Locations"].each do |area_info|
+          region_data["Regions"].each do |area_info|
           area_html << "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{area_info['displayId'] == true ? area_info['id'] : ''}</div>"
         end
       end
@@ -38,7 +38,7 @@ module Jekyll
       # Generate the output HTML
       output = <<~HTML
       <div class="highlight_image_areas_container">
-        <img class="img_highlight_image_areas" alt="img" src="#{region_data['image']}">
+        <img class="img_highlight_image_areas" alt="img" src="#{region_data['Image']}">
         <div name="highlights">
           #{area_html_string}
         </div>
