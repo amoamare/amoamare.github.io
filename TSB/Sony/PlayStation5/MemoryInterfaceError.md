@@ -30,7 +30,8 @@ Sometimes instant power loss, other times BLOD for 2 minutes.
 - Liquid Metal Damage
 {% if page.error == '808011FF' %}
 - Bad Memcore Regulation<br>
-- All Ram Modules Damaged *Not likely, check for other issues before.<br>
+- Memory Modules not Communicated or Responding.<br>
+- All 8 Memory Modules Damaged *Not likely, check for other issues before.<br>
 {% endif %}
 {% if page.error | contains: '8080110F, 808011F0' %}
 - 1 or more of the integrated memory controller(s) failing.(Internal or External)<br>
