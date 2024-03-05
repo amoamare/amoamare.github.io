@@ -1,5 +1,5 @@
 
-# {{ page.title }}
+# Error Code: {{ error }}
 
 ### Table of Contents
 1. [Overview](#overview)
