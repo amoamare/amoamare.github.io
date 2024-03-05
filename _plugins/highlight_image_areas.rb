@@ -19,11 +19,9 @@ module Jekyll
       puts "Region Data: #{region_data['Regions'].inspect}"
 
       area_html = region_data['Regions'].select do |area_info|
-        puts "Highlighted Regions: #{highlighted_regions.inspect}"
         puts "Highlighted Regions: #{highlighted_regions.include?(area_info['id'].to_s)}"
         highlighted_regions.include?(area_info['id'].to_s)
-      end.map 
-      do |area_info|
+      end.map do |area_info|
         
           id_html = area_info['displayId'] == true ? area_info['id'] : nil
           "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{id_html}</div>"
