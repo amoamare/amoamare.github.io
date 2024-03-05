@@ -82,6 +82,8 @@ social-network-links:
 # The URL for the feed will be https://<your_website>/feed.xml
 rss-description: This website is a virtual proof that I'm awesome
 
+remove-ads: true
+
 ###########################
 # --- General options --- #
 ###########################
