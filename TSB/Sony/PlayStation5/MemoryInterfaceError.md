@@ -13,7 +13,16 @@
 
 # GDDR6 Memory Banks No Reponse
 
-### EDM-001, 002, 003
+#### GDDR6 Memory Bank Refrence Locations EDM-001,002,003 etc
 {% highlight_img_areas site.data.highlight_areas.EDM001.GDDR6 %}
 {% endhighlight_img_areas %}
 
+## Symptom / Condition
+When trying to power on the console, the console will give a single beep and a 1 second blue light, then power off.
+
+## Possible Problems
+{% if page.error == '808011FF' %}
+- Bad Memcore<br>
+- All Ram Modules Damaged *Not likely, check for other issues before rulling to this one.<br>
+{% endif %}
+- Bad Communication From APU (Damaged trace, lifted or corroded APU solder balls or pads).<br>
