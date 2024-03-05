@@ -17,7 +17,9 @@ module Jekyll
     end
 
     def render(context)
-      region_data = context[@region]
+      region_data = context[@region]      
+      highlighted_regions = page['highlighted_regions'].to_s.strip.gsub(/^\"|\"$/, '').split(',')
+      
 
       
       # Create an array to hold the HTML for each area
@@ -27,8 +29,11 @@ module Jekyll
       if region_data.is_a?(Hash)
         # Output each location within the region
           region_data["Regions"].each do |area_info|
-          area_html << "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{area_info['displayId'] == true ? area_info['id'] : ''}</div>"
-        end
+            id = area_info['id']
+            if highlighted_regions.include?(id)
+              area_html << "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{area_info['displayId'] == true ? area_info['id'] : ''}</div>"
+            end
+          end
       end
 
       # Combine all area HTML into a single string
