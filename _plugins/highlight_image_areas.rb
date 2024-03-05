@@ -14,13 +14,13 @@ module Jekyll
 
       # Access the page front matter directly
       page = context.registers[:page]
-      highlighted_regions = page['highlighted_regions'].to_s.split(',').map(&:strip)
+      highlighted_regions = page['highlighted_regions']
 
       puts "Region Data: #{region_data['Regions'].inspect}"
 
       area_html = region_data['Regions'].select do |area_info|
-        puts "Highlighted Regions: #{highlighted_regions.include?(area_info['id'].to_s)}"
-        highlighted_regions.include?(area_info['id'].to_s)
+        puts "Highlighted Regions: #{highlighted_regions.include?(area_info['id'])}"
+        highlighted_regions.include?(area_info['id'])
       end.map do |area_info|
         
           id_html = area_info['displayId'] == true ? area_info['id'] : ''
