@@ -26,7 +26,7 @@ When trying to power on the console, the console will give a single beep and a 1
 - Liquid Metal Damage
 {% if page.error == '808011FF' %}
 - Bad Memcore<br>
-- All Ram Modules Damaged *Not likely, check for other issues before rulling to this one.<br>
+- All Ram Modules Damaged *Not likely, check for other issues before.<br>
 {% endif %}
 {% if page.error | contains: '8080110F, 808011F0' %}
 - 1 or more of the integrated memory controller(s) failing.(Internal or External)<br>
