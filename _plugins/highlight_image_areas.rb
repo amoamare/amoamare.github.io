@@ -29,7 +29,7 @@ module Jekyll
 
         puts "Comparing: #{area_info['id']} with Highlighted Regions: #{highlighted_regions.inspect}"
 
-        highlighted_regions.include?(area_info['id'])
+        highlighted_regions.include?(area_info['id'].to_s)
       end.map do |area_info|
         
           id_html = area_info['displayId'] == true ? area_info['id'] : nil
