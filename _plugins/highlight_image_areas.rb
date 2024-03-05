@@ -17,13 +17,19 @@ module Jekyll
       highlighted_regions = page['highlighted_regions'].to_s.strip.gsub(/^\"|\"$/, '').split(',')
 
       puts "Highlighted Regions: #{highlighted_regions.inspect}"
-      
+
       area_html = region_data['Regions'].select do |area_info|
+        
         puts "Area HTML: #{area_html.inspect}"
+
+        region_data['Regions'].each do |area_info|
+          puts "Area ID: #{area_info['id']}"
+          
+        end
+
         highlighted_regions.include?(area_info['id'])
       end.map do |area_info|
         
-        puts "incldued area_info #{area_html}"
           id_html = area_info['displayId'] == true ? area_info['id'] : nil
           "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{id_html}</div>"
         end
