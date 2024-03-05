@@ -27,6 +27,8 @@ module Jekyll
           
         end
 
+        puts "Comparing: #{area_info['id']} with Highlighted Regions: #{highlighted_regions.inspect}"
+
         highlighted_regions.include?(area_info['id'])
       end.map do |area_info|
         
