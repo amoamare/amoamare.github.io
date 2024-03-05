@@ -17,45 +17,30 @@ module Jekyll
     end
 
     def render(context)
-      region_data = context[@region]      
+      region_data = context[@region]
+      # Access the page front matter directly
+      page = context.registers[:page]
       highlighted_regions = page['highlighted_regions'].to_s.strip.gsub(/^\"|\"$/, '').split(',')
       
 
-      
-      # Create an array to hold the HTML for each area
-      area_html = []
-
-      # Check if region_data is a Hash
-      if region_data.is_a?(Hash)
-        # Output each location within the region
-          region_data["Regions"].each do |area_info|
-            id = area_info['id']
-            if highlighted_regions.include?(id)
-              area_html << "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{area_info['displayId'] == true ? area_info['id'] : ''}</div>"
-            end
-          end
+      area_html = region_data.dig('Regions')&.map do |area_info|
+      next unless highlighted_regions.include?(area_info['id'])
+        id_html = area_info['displayId'] ? area_info['id'] : ''
+        "<div class='highlight' name='bank-#{area_info['id']}' style='top: #{area_info['top']}%; left: #{area_info['left']}%; width: #{area_info['width']}%; height: #{area_info['height']}%;'>#{id_html}</div>"
       end
 
-      # Combine all area HTML into a single string
-      area_html_string = area_html.join("\n")
+      area_html_string = area_html&.compact&.join("\n")
 
-
-      # Generate the output HTML
       output = <<~HTML
-      <div class="highlight_image_areas_container">
-        <img class="img_highlight_image_areas" alt="img" src="#{region_data['Image']}">
-        <div name="highlights">
-          #{area_html_string}
+        <div class="highlight_image_areas_container">
+          <img class="img_highlight_image_areas" alt="img" src="#{region_data['Image']}">
+          <div name="highlights">
+            #{area_html_string}
+          </div>
         </div>
-      </div>
       HTML
 
-      # Parse the output string with Liquid to render any Liquid syntax
-      rendered_output = Liquid::Template.parse(output).render(context)
-
-      # Return the rendered output
-      super
-      rendered_output
+      Liquid::Template.parse(output).render(context)
     end
 
     # Override blank? method to always return true, indicating that the block is blank
