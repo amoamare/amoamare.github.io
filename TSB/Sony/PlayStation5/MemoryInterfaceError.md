@@ -26,8 +26,8 @@ Sometimes instant power loss, other times BLOD for 2 minutes.
 
 ## Possible Problems
 - Bad Communication From APU (Damaged trace, lifted or corroded APU solder balls or pads).<br>
-- Liquid Damage
-- Liquid Metal Damage
+- Liquid Damage<br>
+- Liquid Metal Damage<br>
 {% if page.error == '808011FF' %}
 - Bad Memcore Regulation<br>
 - Memory Modules not Communicated or Responding.<br>
