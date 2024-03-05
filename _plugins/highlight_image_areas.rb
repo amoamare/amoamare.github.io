@@ -19,8 +19,7 @@ module Jekyll
       puts "highlighted_regions areas: #{highlighted_regions}"
 
       area_html = region_data['Regions'].select do |area_info|
-        
-        puts "area_html areas: #{area_html}"
+        puts "Area HTML: #{area_html.inspect}"
         highlighted_regions.include?(area_info['id'])
       end.map do |area_info|
         
