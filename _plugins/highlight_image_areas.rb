@@ -14,7 +14,7 @@ module Jekyll
 
       # Access the page front matter directly
       page = context.registers[:page]
-      highlighted_regions = page['highlighted_regions'].to_s.strip.gsub(/^\"|\"$/, '').split(',')
+      highlighted_regions = page['highlighted_regions'].to_s.split(',').map(&:strip)
 
       puts "Region Data: #{region_data['Regions'].inspect}"
 
