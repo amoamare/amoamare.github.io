@@ -1,43 +1,52 @@
-RegionLocations:
-  EDM001:
-    GDDR6:
+EDM001:
+  GDDR6:
+    image: "/assets/img/ps5motherboard.jpg"
+    Locations:
       - id: 1
         top: 34
         left: 47.75
         width: 6
         height: 7
+        displayId: true
       - id: 2
         top: 28.6
         left: 55.3
         width: 5
         height: 6
+        displayId: true
       - id: 3
         top: 28.6
         left: 62.3
         width: 5
         height: 6
+        displayId: true
       - id: 4
         top: 34
         left: 68.75
         width: 6
         height: 7
+        displayId: true
       - id: 5
         top: 57
         left: 68.75
         width: 6
         height: 7
+        displayId: true
       - id: 6
         top: 63.5
         left: 62.3
         width: 5
         height: 6
+        displayId: true
       - id: 7
         top: 63.5
         left: 55.3
         width: 5
         height: 6
+        displayId: true
       - id: 8
         top: 57
         left: 47.75
         width: 6
         height: 7
+        displayId: true
