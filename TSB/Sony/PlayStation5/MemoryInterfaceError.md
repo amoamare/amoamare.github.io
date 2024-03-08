@@ -12,7 +12,15 @@
 6. [Parts Information](#parts-information)
 
 ## Overview
-Indicated memory banks failed to communicate or initialise from APU.
+Indicated memory banks failed to communicate or initialize from APU.
+
+*   **Faulty Memory Modules**: One or more memory modules (RAM) may be malfunctioning or improperly seated, preventing communication or initialization.
+    
+*   **APU Malfunction**: The APU itself may be experiencing issues, such as power supply problems or internal component failures, leading to communication failures with the memory banks.
+    
+*   **Connection Issues**: There might be connectivity problems between the APU and the memory banks, either due to loose connections, damaged traces, or faulty connectors.
+    
+*   **Compatibility Problems**: Incompatibility between the APU and the memory modules could lead to communication failures or initialization issues.
 
 #### GDDR6 Memory Bank Refrence Locations EDM-001,002,003 etc
 {% highlight_img_areas site.data.highlight_areas.EDM001.GDDR6 %}
