@@ -13,6 +13,9 @@ permalink: /tsb/codenotfound
 # Error Code: {{ parameter_value }}
 
 {% assign url_parts = page.url | split: '?' %}
+
+# Error Code: {{ url_parts }}
+# Error Code: {{ url_parts.size }}
 {% if url_parts.size > 1 %}
   {% assign url_params = url_parts[1] %}
   {% assign parameters = url_params | query_params %}
