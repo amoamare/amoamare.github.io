@@ -33,7 +33,6 @@ let BeautifulJekyllJS = {
   },
 
   initRedirect : function() {
-    window.onload = function() {
       var currentUrl = window.location.href;
       var regex = /\/tsb\/sony\//; // Updated regex to match the path only
 
@@ -41,7 +40,6 @@ let BeautifulJekyllJS = {
       if (regex.test(currentUrl)) {
         window.location.href = "/tsb/codenotfound"; // Redirect to the missing page
       }
-    };
   },
 
 
