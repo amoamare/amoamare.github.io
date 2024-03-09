@@ -1,6 +1,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  {%- if page.redirect -%}
+    <script>
+      var currentUrl = window.location.href;
+      var regex = /\/tsb\/sony\//; // Updated regex to match the path only
+
+      // If the current URL matches the pattern /tsb/sony/*
+      if (regex.test(currentUrl)) {
+        window.location.href = "/tsb/codenotfound"; // Redirect to the missing page
+      }
+    </script>
+  {%- endif -%}
 
   {% capture pagetitle %}
     {%- if page.share-title -%}
