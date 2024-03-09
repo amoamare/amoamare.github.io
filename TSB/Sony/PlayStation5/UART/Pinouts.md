@@ -2,10 +2,10 @@
 layout: minimal
 title: UART Locations
 subtitle: UART Locations
-permalink: /tsb/sony/playstation5/uartlocations
+permalink: /tsb/sony/playstation5/uart/pinouts
 ---
 
-# UART Location & Pinouts
+# UART Pinout References
 
 ### Table of Contents
 1. [Overview](#overview)
