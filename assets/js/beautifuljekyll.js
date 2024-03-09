@@ -6,7 +6,6 @@ let BeautifulJekyllJS = {
   numImgs : null,
 
   init : function() {
-    BeautifulJekyllJS.initRedirect();
     setTimeout(BeautifulJekyllJS.initNavbar, 10);
 
     // Shorten the navbar after scrolling a little bit down
@@ -31,17 +30,6 @@ let BeautifulJekyllJS = {
 
     BeautifulJekyllJS.initSearch();
   },
-
-  initRedirect : function() {
-      var currentUrl = window.location.href;
-      var regex = /\/tsb\/sony\//; // Updated regex to match the path only
-
-      // If the current URL matches the pattern /tsb/sony/*
-      if (regex.test(currentUrl)) {
-        window.location.href = "/tsb/codenotfound"; // Redirect to the missing page
-      }
-  },
-
 
   initNavbar : function() {
     // Set the navbar-dark/light class based on its background color
