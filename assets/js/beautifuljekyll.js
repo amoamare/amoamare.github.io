@@ -39,7 +39,7 @@ let BeautifulJekyllJS = {
 
       // If the current URL matches the pattern /tsb/sony/*
       if (regex.test(currentUrl)) {
-        window.location.href = "/tsb/missingpage.md"; // Redirect to the missing page
+        window.location.href = "/tsb/codenotfound"; // Redirect to the missing page
       }
     };
   },
