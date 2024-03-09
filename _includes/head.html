@@ -9,7 +9,12 @@
 
       // If the current URL matches the pattern /tsb/sony/*
       if (regex.test(currentUrl)) {
-        window.location.href = "/tsb/codenotfound"; // Redirect to the missing page
+         // Extract URL parameters from the current URL
+        var paramsIndex = currentUrl.indexOf('?');
+        var params = paramsIndex !== -1 ? currentUrl.slice(paramsIndex) : ''; // Extract parameters or keep it empty if there are none
+
+    // Redirect to the missing page with URL parameters
+        window.location.href = "/tsb/codenotfound" + params; // Redirect to the missing page
       }
     </script>
   {%- endif -%}
