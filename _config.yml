@@ -300,8 +300,6 @@ exclude:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-
-gems:
  - jekyll-redirect-from
   
 # Beautiful Jekyll / Dean Attali
