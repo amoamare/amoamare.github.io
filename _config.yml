@@ -280,6 +280,10 @@ defaults:
     values:
       layout: "page"
 
+redirects:
+  - from: "/sony/tsb/errors/*"
+  - to: "/sony/tsb/codenotfound"
+
 # Exclude these files from production site
 exclude:
   - CHANGELOG.md
