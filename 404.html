@@ -6,6 +6,20 @@ permalink: /404.html
 
 {% assign redirect = false %}
 
+
+{% assign url_parts = page.url | split: '/' %}
+{% if url_parts.size > 3 and url_parts[1] == "sony" and url_parts[2] == "tsb" and url_parts[3] == "errors" %}
+    {% assign redirect_url = "/sony/tsb/errors/missing" %}
+    {% assign redirect = true %}
+    <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
+    <script>window.location.href = "{{ redirect_url }}";</script>
+{% endif %}
+
+
+<h1>404 - Not Found</h1>
+<p>Sorry, the page "{{ url_parts }}" you are looking for could not be found.</p>
+
+
 {% for rule in site.redirects %}
     {% if page.url == rule.from %}
         {% assign redirect_url = rule.to %}
@@ -15,13 +29,6 @@ permalink: /404.html
     {% endif %}
 {% endfor %}
 
-{% assign url_parts = page.url | split: '/' %}
-{% if url_parts.size > 3 and url_parts[1] == "sony" and url_parts[2] == "tsb" and url_parts[3] == "errors" %}
-    {% assign redirect_url = "/sony/tsb/errors/missing" %}
-    {% assign redirect = true %}
-    <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
-    <script>window.location.href = "{{ redirect_url }}";</script>
-{% endif %}
 
 <div class="text-center">
   <h1>Whoops, this page doesn't exist.</h1>
