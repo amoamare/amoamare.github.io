@@ -8,14 +8,7 @@
       var regex = /\/tsb\/.+\//; // Updated regex to match the path only
       
       // If the current URL matches the pattern /tsb/sony/*
-      if (regex.test(currentUrl) && !currentUrl.startsWith("/tsb/codenotfound")) {
-        var regHex = /([0-9a-fA-F]{8})/;
-        if (regHex.test(currentUrl)) {
-          var match = currentUrl.match(regHex); // Extract the hexadecimal value from the URL
-           var hexValue = match[0]; // Extract the captured hexadecimal value from the matched URL
-          
-          window.location.href = "/tsb/codenotfound="+hexValue; // Redirect to the missing page
-        } else  {
+      if (regex.test(currentUrl) && currentUrl.indexOf("/tsb/codenotfound") === -1) {
           window.location.href = "/tsb/codenotfound"; // Redirect to the missing page
         }
       }

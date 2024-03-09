@@ -37,3 +37,5 @@ function DecodeErrorToBanks(id) {
       // Insert your highlighting logic here
     }
   }
+
+  
