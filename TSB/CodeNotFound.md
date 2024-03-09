@@ -7,7 +7,7 @@ subtitle: Technical Service Bulletin
 permalink: /tsb/codenotfound
 ---
 
-{% assign url_parts = page.url | split: '/' %}
+{% assign url_parts = page.url | split: '=' %}
 {% assign parameter_value = url_parts | last %}
 
 # Error Code: {{ parameter_value }}
