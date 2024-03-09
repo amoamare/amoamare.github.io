@@ -12,9 +12,11 @@ permalink: /tsb/codenotfound
 
 # Error Code: {{ parameter_value }}
 
-{% assign url_params = page.url | split: '?' | last %}
-{% assign parameters = url_params | query_params %}
-
-{% for key in parameters %}
-  Key: {{ key }}, Value: {{ parameters[key] }}
-{% endfor %}
+{% assign url_parts = page.url | split: '?' %}
+{% if url_parts.size > 1 %}
+  {% assign url_params = url_parts[1] %}
+  {% assign parameters = url_params | query_params %}
+  {% for key in parameters %}
+    Key: {{ key }}, Value: {{ parameters[key] }}
+  {% endfor %}
+{% endif %}
