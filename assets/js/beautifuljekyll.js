@@ -35,7 +35,7 @@ let BeautifulJekyllJS = {
   initRedirect : function() {
     window.onload = function() {
       var currentUrl = window.location.href;
-      var regex = /^\/tsb\/sony\//; // Updated regex to match the path only
+      var regex = /\/tsb\/sony\//; // Updated regex to match the path only
 
       // If the current URL matches the pattern /tsb/sony/*
       if (regex.test(currentUrl)) {
