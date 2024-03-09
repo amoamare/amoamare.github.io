@@ -5,7 +5,8 @@ title: Unkown Error Code
 subtitle: Technical Service Bulletin
 permalink: /tsb/codenotfound
 ---
-<div id="errorCode"></div>
+
+<h3 id="errorCode"></h3>
 
 <script>
     // Function to extract URL parameters
@@ -23,3 +24,20 @@ permalink: /tsb/codenotfound
     var errorCodeElement = document.getElementById('errorCode');
     errorCodeElement.textContent = 'Error Code: ' + errorId;
 </script>
+
+# Submit Information Form
+
+Please fill out the form below to submit your information to the developer:
+
+<form action="/submit-info" method="POST">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br>
+  
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br>
+  
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+  
+  <input type="submit" value="Submit">
+</form>
