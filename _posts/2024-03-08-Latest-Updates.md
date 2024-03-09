@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Sample blog post to learn markdown tips
-subtitle: There's lots to learn!
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
-comments: true
-author: Bill Smith
+title: Latest Update
+subtitle: New UI changes, Code TSB introductions, new codes etc.
+#gh-repo: daattali/beautiful-jekyll
+#gh-badge: [star, fork, follow]
+#tags: [test]
+#comments: true
+#author: Bill Smith
 ---
 
 {: .box-success}
