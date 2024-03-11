@@ -17,7 +17,7 @@ permalink: /tsb/sony/playstation5/uart/gettingstarted
 
 ## Overview 
 
-Welcome to the PS5 UART Diagnostics Guide! This guide is designed to assist technicians in diagnosing hardware issues such as GDDR6 memory, APU, HDMI shorts, and more using UART communication.
+Welcome to Consoel Service Tool UART for PS5! This tool is designed to assist technicians in diagnosing hardware issues such as GDDR6 memory, APU, HDMI shorts, and more using UART communication. With the communities help with reverse engineering codes, hardware solutions and repairs related to specific errors. We can continue to update this tool and provide a value to the repair industry.
 
 {% include_relative PinoutsContent.md %}
 
