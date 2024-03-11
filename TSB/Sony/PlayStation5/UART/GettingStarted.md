@@ -19,8 +19,7 @@ permalink: /tsb/sony/playstation5/uart/gettingstarted
 
 Welcome to the PS5 UART Diagnostics Guide! This guide is designed to assist technicians in diagnosing hardware issues such as GDDR6 memory, APU, HDMI shorts, and more using UART communication.
 
-## Pinouts and UART Locations
-{% include_relative Pinouts.md %}
+{% include_relative PinoutsContent.md %}
 
 ## Troubleshooting
 1. **Verify Hardware and Drivers**:
