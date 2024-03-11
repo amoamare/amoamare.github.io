@@ -1,6 +1,6 @@
 ---
 layout: minimal
-title: PS5 UART Diagnostics Guide
+title: PS5 UART Getting Started Guide
 subtitle: Getting Started with UART for Hardware Diagnosis
 permalink: /tsb/sony/playstation5/uart/gettingstarted
 ---
@@ -10,9 +10,9 @@ permalink: /tsb/sony/playstation5/uart/gettingstarted
 ## Table of Contents
 1. [Overview](#overview)
 2. [Pinouts and Locations](#pinouts-and-uart-locations)
-3. [Troubleshooting](#trouble-shooting)
+3. [Troubleshooting](#troubleshooting)
 4. [Questions and Answers](#questions-&-answers)
-5. [Hardware Recommended](#hardware-recommended)
+5. [Recommended Hardware](#recommended-hardware)
 6. [Fuse Information and Details (EDM-002)](#fuse-information-and-details)
 
 ## Overview 
@@ -37,6 +37,7 @@ Welcome to the PS5 UART Diagnostics Guide! This guide is designed to assist tech
    - Inspect fuse F7003 and ensure NOR is not corrupted, as these may affect UART response.
 7. **Monitor Mode**:
    - Switch software to "Monitor" mode and reconnect the console. If no response, try swapping TX and RX again.
+   Remember TTL-TX --> PS5-RX and TTL-RX --> PS5-TX. Tx is the mouth and Rx is the Ear. You dont talk mouth to mouth.
 8. **Hardware/Software Comparison**:
    - Test with a known working console to isolate hardware or software issues.
 
@@ -47,10 +48,10 @@ Welcome to the PS5 UART Diagnostics Guide! This guide is designed to assist tech
 #### Q: I Keep getting "Operation Cancelled" do you know why?
    - A: If all connections are correct, a dead southbridge may be the cause. Refer to troubleshooting for detailed steps.
 
-## Hardware Recommended
+## Recommended Hardware
    - For optimal performance, use a 3.3V UART interface. We recommend USB to TTL converters such as [this one](https://www.amazon.com/gp/product/B0B1HYCN34/ref=ppx_yo_dt_b_search_asin_image?ie=UTF8&psc=1). If using a CH341, ensure it has a 5V to 3.3V switch or perform the necessary modifications.
 
-## Fuse Information and Details (EDM-002)
+## Fuse Information and Details
 - **F5401**: No UART errors when pulled; console boots normally.
 - **F5402**: Disk Drive; no UART errors displayed; console boots normally.
 - **F7502**: Storage Controller; specific error codes displayed.

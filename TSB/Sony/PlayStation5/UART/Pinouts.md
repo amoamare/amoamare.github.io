@@ -8,14 +8,8 @@ permalink: /tsb/sony/playstation5/uart/pinouts
 # UART Pinout References
 
 ### Table of Contents
-1. [Overview](#overview)
-2. [Models](#models)
-3. [Symptom / Condition](#symptom--condition)
-4. [Possible Problems](#possible-problems)
-5. [IC Images and Locations](#ic-images-and-locations)
-6. [Diagnosis](#diagnosis)
-6. [Repair Procedure](#repair-procedure)
-6. [Parts Information](#parts-information)
+1. [EDM-010 & EDM-020](#edm-010/edm-020)
+2. [EDM-03x+](#edm-03x+)
 
 ## EDM-010/EDM-020
 
