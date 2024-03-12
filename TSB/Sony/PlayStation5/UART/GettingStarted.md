@@ -53,7 +53,7 @@ Before getting started, make sure you have the following:
    - 1st boot sequence (powering-on state)
    - Powered-on state
    - 2nd boot sequence (powering-on state)  
-   *Note: Each time we read the codes, we will want to save a reference of the codes, if any. Then, clear all codes before moving on to the next state.*
+   *Note: Each time we read the codes, we will want to save a reference of the codes, if any. Then, clear all codes before moving on to the next state.*<br>
 
 5. **Previous Error Codes**: Before doing anything, we will want to get a snapshot of the error codes that have been previously thrown into memory. After connecting the PlayStation 5 and supplying 12V either by power supply or a powered outlet. Select "Read All Codes" in Console Service Tool. Save the information, then in Console Service Tool select "Clear All Codes". Disconnect 12V power from the console and allow 1 minute for the console to completely power off.  
    *Note: Console Service Tool saves error logs in the \*/logs directory.*
@@ -61,7 +61,7 @@ Before getting started, make sure you have the following:
 6. **Standby State**: Supply 12V to the console again either by power supply or a powered wall outlet. **Do not power on console**. Wait 1 minute for the console to initialize Standby state. Select "Read All Codes" in Console Service Tool. If any errors display during this process, they are most likely related to standby state. Save the information. If error codes are displayed, it is recommended to diagnose these codes before proceeding. "Clear All Codes" in Console Service Tool but do not disconnect the 12V power supply. Leave it connected. You should be in Standby state with no error codes.
 
 7. **1st Boot Attempt**: Press the Power button on the PlayStation 5 to power on the console. *Note: Do not worry if the console does not fully power on. If it just beeps, shuts down, or does not respond. This may be normal.* Select "Read All Codes" in Console Service Tool. If any errors display during this process, they are most likely related to powering-on state. Save the information. If error codes are displayed, it is recommended to diagnose these codes before proceeding. Again "Clear All Codes" in Console Service Tool but do not disconnect the 12V power supply. Leave it connected. The console may be Powered on, in Standby state, or appear powered off.  
-   - **Powered-on State**: Skip this step if the console does not fully power on. If the console fully powers on, you may need to open a movie, PlayStation 4, or PlayStation 5 game and run a game for prolonged periods of time to get a crash or freeze. During stages of this, it is recommended to "Read All Codes" periodically to see if any codes appear during this time.
+   - **Powered-on State**: Skip this step if the console does not fully power on. If the console fully powers on, you may need to open a movie, PlayStation 4, or PlayStation 5 game and run a game for prolonged periods of time to get a crash or freeze. During stages of this, it is recommended to "Read All Codes" periodically to see if any codes appear during this time.<br>
 
 8. **2nd Boot Attempt**: Press the Power button on the PlayStation 5 to power on the console once more. *Note: You may get a different result than the 1st Boot Attempt, such as no light but single beep, or no light and no beep.* Select "Read All Codes" in Console Service Tool. If any errors display during this process, they are most likely related to powering-on state. Save the information.
 
