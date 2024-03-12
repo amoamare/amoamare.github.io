@@ -17,11 +17,45 @@ permalink: /tsb/sony/playstation5/uart/gettingstarted
 
 ## Overview 
 
-Welcome to Consoel Service Tool UART for PS5! This tool is designed to assist technicians in diagnosing hardware issues such as GDDR6 memory, APU, HDMI shorts, and more using UART communication. With the communities help with reverse engineering codes, hardware solutions and repairs related to specific errors. We can continue to update this tool and provide a value to the repair industry.
+Welcome to Consoel Service Tool UART for PlayStation 5! This tool is designed to assist technicians in diagnosing hardware issues such as GDDR6 memory, APU, HDMI shorts, and more using UART communication and reading the error codes directly from the console. With the communities help with reverse engineering codes, hardware solutions and repairs related to specific errors. We can continue to update this tool and provide a great value to the repair industry.
+
+## Prerequisites
+
+Before getting started, make sure you have the following:
+
+- **PlayStation 5 Console**: Ensure you have a PlayStation 5 console.
+- **UART Module**: Obtain a UART module compatible with the PlayStation 5 console. (CH341A*)
+  *Note: If using the CH341A UART module, you will need to modify it to work with 3.3V instead of 5V. Refer to the following documentation for guidance on how to perform this modification: [CH341A UART Module 3.3V Modification Guide](#CH341A-UART-Module-3.3V-Modification-Guide).*
+- **Console Service Tool**: This software or similar software to read the error codes from UART.
+
+## Setup Instructions
+
+1. **Connect UART Module and Install Drivers**: Connect the UART module to your computer.
+   *Note: Ensure that any required drivers are installed following the manufacturer's instructions.*
+
+2. **Solder UART Wires to Module & PlayStation 5**: Using three wires in total: [Reference Images](#pinouts-and-uart-locations)
+   - Connect the first wire from the RX pin on the UART module to the TX pin on the PlayStation 5.
+   - Connect a second wire from the TX pin on the UART module to the RX pin on the PlayStation 5.
+   - Connect a third wire from the GND pin on the UART module to the GND pin on the PlayStation 5.
+
+3. **Supply 12V power to the PlayStation 5**: Connect the PlayStation 5 to a powered wall outlet, or supply 12V using a DC power supply.
+   *Note: Do not power on the PlayStation 5 at this time.*
+
+4. **Using Console Service Tool**: Select "Read All Codes" while the PlayStation 5 is unpowered and in standby mode. If you encounter any errors during this process, they are most likely related to standby state. Record any codes that may be displayed.
+
+5. **Using Console Service Tool**: Select "Clear Codes". This will clear any codes including any from standby. At this time, press the power button one time on the PlayStation 5 to initiate power on state.
+   *Note: Do not worry if the console does not fully power on. If it just beeps or shuts down that is fine.*
+
+6. **Repeat step 4**: Read all codes again. If any codes are preset, these codes most likely deal with powering-on or powered-on state. Record any codes that may be displayed.
+
+7. **Diagnose and Troubleshoot**: You may now have a list of error codes and/or descriptions. Utilize the information provided, community forums, or other means to further diagnose or troubleshoot your PlayStation 
 
 {% include_relative PinoutsContent.md %}
 
+{% include_relative CH341A33VMod.md %}
+
 ## Troubleshooting
+
 1. **Verify Hardware and Drivers**:
    - Ensure you have a TTL or CH341 device operating at 3.3V. Install the correct drivers and restart your computer if needed.
 2. **Check Device Manager**:
