@@ -23,16 +23,6 @@ permalink: /tsb/sony/playstation5/uart/gettingstarted
    * [A Project in Works by Fix MY](#a-project-in-works-by-fix-my)
 - [Want to Help or Contribute?](#want-to-help-or-contribute)
 
-
-1. [Overview](#overview)
-2. [Prerequisites](#prerequisites)
-3. [Setup Instructions & Getting Started](#setup-instructions-getting-started)
-4. [Pinouts and Locations](#pinouts-and-uart-locations)
-5. [Troubleshooting](#troubleshooting)
-6. [Questions and Answers](#questions-&-answers)
-7. [Recommended Hardware](#recommended-hardware)
-8. [Fuse Information and Details (EDM-002)](#fuse-information-and-details)
-
 ## Overview 
 
 Welcome to Console Service Tool UART for PlayStation 5! This tool is designed to assist technicians in diagnosing hardware issues such as GDDR6 memory, APU, HDMI shorts, and more using UART communication and reading the error codes directly from the console. With the communities help with reverse engineering codes, hardware solutions and repairs related to specific errors. We can continue to update this tool and provide a great value to the repair industry.
