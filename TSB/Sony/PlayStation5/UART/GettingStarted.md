@@ -17,7 +17,7 @@ permalink: /tsb/sony/playstation5/uart/gettingstarted
 
 ## Overview 
 
-Welcome to Consoel Service Tool UART for PlayStation 5! This tool is designed to assist technicians in diagnosing hardware issues such as GDDR6 memory, APU, HDMI shorts, and more using UART communication and reading the error codes directly from the console. With the communities help with reverse engineering codes, hardware solutions and repairs related to specific errors. We can continue to update this tool and provide a great value to the repair industry.
+Welcome to Console Service Tool UART for PlayStation 5! This tool is designed to assist technicians in diagnosing hardware issues such as GDDR6 memory, APU, HDMI shorts, and more using UART communication and reading the error codes directly from the console. With the communities help with reverse engineering codes, hardware solutions and repairs related to specific errors. We can continue to update this tool and provide a great value to the repair industry.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Before getting started, make sure you have the following:
 
 - **PlayStation 5 Console**: Ensure you have a PlayStation 5 console.
 - **UART Module**: Obtain a UART module compatible with the PlayStation 5 console. (CH341A*)
-  *Note: If using the CH341A UART module, you will need to modify it to work with 3.3V instead of 5V. Refer to the following documentation for guidance on how to perform this modification: [CH341A UART Module 3.3V Modification Guide](#CH341A-UART-Module-3.3V-Modification-Guide).*
+  *Note: If using the CH341A UART module, you will need to modify it to work with 3.3V instead of 5V. Refer to the following documentation for guidance on how to perform this modification: [CH341A UART Module 3.3V Modification Guide](#ch341a-uart-module-33v-modification-guide).*
 - **Console Service Tool**: This software or similar software to read the error codes from UART.
 
 ## Setup Instructions
