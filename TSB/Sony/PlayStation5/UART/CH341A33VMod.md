@@ -3,7 +3,9 @@
 ## Overview
 The mod is necessary to ensure compatibility with devices requiring 3.3v on the TX/RX lines, such as the PlayStation 5's southbridge.
 
-![EDM-010/EDM020 UART](/assets/img/uart/CH341A_3_3VMod.webp)
+## CH341A Reference Image
+
+![CH341A_3v3_Mod](/assets/img/uart/CH341A_3_3VMod.webp)
 
 **Steps:**
 
@@ -12,11 +14,11 @@ The mod is necessary to ensure compatibility with devices requiring 3.3v on the 
 2.  **Soldering:**    
     *   Using two wires:
         *   Connect one end of the first wire to the lifted PIN 15 on the CH341A IC.
-        *   Connect the other end of the first wire to the 3Vout middle pin on the bottom of the voltage regulator.
-        *Note: See reference image orange and blue wire.*
+        *   Connect the other end of the first wire to the 3Vout middle pin on the bottom of the voltage regulator.  
+        *Note: See [Reference Image](#ch341a-reference-image) orange and blue wire.*
         *   Connect one end of the second wire to PIN 9 on the CH341A IC.
-        *   Connect the other end of the second wire to the 3Vout top pin of the voltage regulator.
-        *Note: See reference image green and blue wire.*
+        *   Connect the other end of the second wire to the 3Vout top pin of the voltage regulator.  
+        *Note: See [Reference Image](#ch341a-reference-image) green and blue wire.*
 3.  **Verification:**    
     *   Verify that there is a 3v output on both TX and RX pins.
 4.  **Completion:**    
