@@ -20,6 +20,17 @@ permalink: /tsb/codenotfound
     // Get the error code from URL parameter
     var errorId = getUrlParameter('errorId');
 
+
+ var divNode = document.getElementById("__TableEntryScreenCST_Form_Data_SchemaError_ID");
+ 
+    for(var i = 0; i < divNode.length; ++i){
+        var inputNode = inputNodes[i];
+        if(inputNode.type == 'text') {
+            //Do whatever you want
+            inputNode.textContent = errorId;
+        }
+    }
+
     // Update the text on the page
     var errorCodeElement = document.getElementById('errorCode');
     errorCodeElement.textContent = 'Error Code: ' + errorId;
