@@ -25,7 +25,7 @@ permalink: /tsb/codenotfound
 </script>
 
 <div style="justify-content: center; display: flex;">
-  <iframe id="ifrm" title="" scrolling="no" frameborder="no" onload="setIframeHeight('ifrm')"
+  <iframe id="ifrm" title="" scrolling="no" frameborder="no"  width="680" height="900"
 style="overflow:hidden;border:0;margin:0;padding:0;width:680;height:900;" 
 src="https://www.appsheet.com/start/8aff849a-8d48-4493-b485-a85a81b1d059?refresh=1&wipe=1"></iframe>
 </div>
