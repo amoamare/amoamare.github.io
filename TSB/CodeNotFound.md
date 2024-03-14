@@ -22,7 +22,7 @@ permalink: /tsb/codenotfound
 
 
  var divNode = document.getElementById("__TableEntryScreenCST_Form_Data_SchemaError_ID");
- 
+ console.log(divNode);
     for(var i = 0; i < divNode.length; ++i){
         var inputNode = inputNodes[i];
         if(inputNode.type == 'text') {
@@ -37,6 +37,4 @@ permalink: /tsb/codenotfound
 </script>
 
 # Submit Information Form
-<div style="width: auto; margin-left: auto; margin-right: auto">
-<iframe src="https://www.appsheet.com/start/8aff849a-8d48-4493-b485-a85a81b1d059?refresh=1&wipe=1"></iframe>
-</div>
+<iframe src="https://www.appsheet.com/start/8aff849a-8d48-4493-b485-a85a81b1d059?refresh=1&wipe=1" width="320" height="568"/>
