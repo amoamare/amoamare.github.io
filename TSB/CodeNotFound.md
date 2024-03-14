@@ -22,7 +22,14 @@ permalink: /tsb/codenotfound
     // Update the text on the page
     var errorCodeElement = document.getElementById('errorCode');
     errorCodeElement.textContent = 'Error Code: ' + errorId;
+    
+    function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+    }
 </script>
 
-# Submit Information Form
-<iframe src="https://www.appsheet.com/start/8aff849a-8d48-4493-b485-a85a81b1d059?refresh=1&wipe=1" width="320" height="1280"/>
+<div style="justify-content: center; display: flex;">
+  <iframe scrolling="no" frameborder="no" onload="resizeIframe(this)"
+style="overflow:hidden;border:0;margin:0;padding:0;width:680;height:900;" 
+src="https://www.appsheet.com/start/8aff849a-8d48-4493-b485-a85a81b1d059?refresh=1&wipe=1"></iframe>
+</div>
