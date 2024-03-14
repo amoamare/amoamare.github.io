@@ -1,15 +1,23 @@
 # CH341A UART Module 3.3V Modification Guide
 
 ## Overview
-The mod is required because the CH341A produces 5v on the original layout for UART. 
-The PlayStation 5 southbridge will only respond with 3.3v. to send commands to the southbridge.
-If 5v is sent to the southbridge the southbridge will stop communicating on the RX line.
+The mod is necessary to ensure compatibility with devices requiring 3.3v on the TX/RX lines, such as the PlayStation 5's southbridge.
 
+![EDM-010/EDM020 UART](/assets/img/uart/CH341A_3_3VMod.webp)
 
-## Steps 
-- Lift pin 15 from board (make sure it doesn't touch the 5v pad beneath isolate the pad from the pin)
-- Solder 1 side of a wire to the mosfets middle pin on bottom.
-- Solder the other side of wire to PIN 15 of the IC.
-- Solder a second wire from the mofets top pin to PIN 9 on the IC.
-- Verify you have 3v3 instead of 5v.
-- After the required modifications have been completed you are ready to use.
+**Steps:**
+
+1.  **Locate PIN 15:**
+    *   Identify PIN 15 on the CH341A IC and isolate it from the board, ensuring it doesn't touch the original 5v pad below.
+2.  **Soldering:**    
+    *   Using two wires:
+        *   Connect one end of the first wire to the lifted PIN 15 on the CH341A IC.
+        *   Connect the other end of the first wire to the 3Vout middle pin on the bottom of the voltage regulator.
+        *Note: See reference image orange and blue wire.*
+        *   Connect one end of the second wire to PIN 9 on the CH341A IC.
+        *   Connect the other end of the second wire to the 3Vout top pin of the voltage regulator.
+        *Note: See reference image green and blue wire.*
+3.  **Verification:**    
+    *   Verify that there is a 3v output on both TX and RX pins.
+4.  **Completion:**    
+    *   Once the modifications are verified, the CH341A UART Module is ready for use with devices requiring 3.3v on the TX/RX lines.
