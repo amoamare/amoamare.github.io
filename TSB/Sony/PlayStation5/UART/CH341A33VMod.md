@@ -16,7 +16,7 @@ The mod is necessary to ensure compatibility with devices requiring 3.3v on the 
         * Connect one end of the first wire to the lifted PIN 15 on the CH341A IC.  
         *[Reference Image](#ch341a-reference-image) labeled 1*
         * Connect the other end of the first wire to the 3Vout middle pin on the bottom of the voltage regulator.  
-        *[Reference Image](#ch341a-reference-image) labeled 2 - orange and blue wire.*
+        *[Reference Image](#ch341a-reference-image) labeled 2 - orange and blue wire.*  
         * Connect one end of the second wire to PIN 9 on the CH341A IC.
         *[Reference Image](#ch341a-reference-image) labeled 3*
         * Connect the other end of the second wire to the 3Vout top pin of the voltage regulator.  
