@@ -15,9 +15,9 @@ module Jekyll
       width = "700px";
       height = "700px";
       output = <<~HTML
-        <table width="100%" height="100%" border="0">
+        <table width="100%" height="100%" style="border: none;">
             <tr>
-                <td align="center" valign="middle" border="0">
+                <td align="center" valign="middle" style="border: none;">
                     <!-- Your PDF display code here -->
                     <object title="#{@input}" data="#{pdf_url}" type="application/pdf" width="#{width}" height="#{height}">
                         <!-- Display a download link if <object> is not supported -->
