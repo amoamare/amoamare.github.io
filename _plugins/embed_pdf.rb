@@ -33,9 +33,7 @@ module Jekyll
 
         Liquid::Template.parse(output).render(context)
     end
-
-    # Custom HTML for embedding PDF
-    end
+    
   end
 end
 
