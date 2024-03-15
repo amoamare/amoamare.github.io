@@ -12,6 +12,14 @@ Module Jekyll
       pdf_url = "#{baseurl}/assests/documents/#{@input}"
 
       output = <<~HTML
+        <div class="highlight_image_areas_container">
+        <embed srt="">
+        </embed>
+            <img class="img_highlight_image_areas" alt="img" src="#{region_data['Image']}">
+            <div name="highlights">
+            #{area_html.join("\n")}
+            </div>
+        </div>
         <object title='#{pdf_url}' data='#{pdf_url}' type='application/pdf' width='700px' height='700px'>
             <embed src='#{pdf_url}' width='700px' height='700px'>
                 <p>
