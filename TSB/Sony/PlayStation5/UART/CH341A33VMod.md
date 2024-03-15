@@ -25,7 +25,7 @@ The mod is necessary to ensure compatibility with devices requiring 3.3v on the 
     *   Verify that there is a 3v output on both TX and RX pins.
 4.  **Switch CH341A Interface To TTL/UART IMPORTANT:** 
     * Move or add a jumper to PINS labeled 2 and 3.  
-    *[Reference Image](#ch341a-reference-image) labeled Important  4.*
+    *[Reference Image](#ch341a-reference-image) labeled Important  4.*   
     *Note: This step is important. You will not get a serial port if you do not switch or add a jumper.  
 5.  **Completion:**    
     *   Once the modifications are verified, the CH341A UART Module is ready for use with devices requiring 3.3v on the TX/RX lines.
