@@ -15,7 +15,7 @@ module Jekyll
       width = "700px";
       height = "700px";
       output = <<~HTML
-        <table width="100%" height="100%">
+        <table width="100%" height="100%" border="0">
             <tr>
                 <td align="center" valign="middle" border="0">
                     <!-- Your PDF display code here -->
