@@ -13,7 +13,7 @@ The mod is necessary to ensure compatibility with devices requiring 3.3v on the 
     *   Identify PIN 15 on the CH341A IC ([Reference Image](#ch341a-reference-image) labeled 1) and isolate it from the board, ensuring it doesn't touch the original 5v pad below.
 2.  **Soldering:**    
     *   Using two wires:
-        * Connect one end of the first wire to the lifted PIN 15 on the CH341A IC.
+        * Connect one end of the first wire to the lifted PIN 15 on the CH341A IC.  
         *[Reference Image](#ch341a-reference-image) labeled 1*
         * Connect the other end of the first wire to the 3Vout middle pin on the bottom of the voltage regulator.  
         *[Reference Image](#ch341a-reference-image) labeled 2 - orange and blue wire.*
