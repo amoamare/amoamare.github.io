@@ -10,13 +10,12 @@ Module Jekyll
       baseurl = context.registers[:site].config['baseurl']
       # Construct the full URL to the PDF file
       pdf_url = "#{baseurl}/assests/documents/#{@input}"
-      # Embed the PDF using an <iframe> tag
-      "<iframe src='#{pdf_url}' width='100%' height='500px' frameborder='0'></iframe>"
-      "<object data='#{pdf_url}' type="application/pdf" width="700px" height="700px">
-      <embed src='#{pdf_url}'>
+    # Custom HTML for embedding PDF
+      "<object title='#{pdf_url}' data='#{pdf_url}' type='application/pdf' width='700px' height='700px'>
+        <embed src='#{pdf_url}' width='700px' height='700px'>
           <p>This browser does not support PDFs. Please download the PDF to view it: <a href='#{pdf_url}'>Download PDF</a>.</p>
-      </embed>
-  </object>"
+        </embed>
+      </object>"
     end
   end
 end
