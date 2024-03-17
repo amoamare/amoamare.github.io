@@ -5,7 +5,7 @@ The mod is necessary to ensure compatibility with devices requiring 3.3v on the 
 
 ## CH341A Reference Image
 
-![CH341A_3v3_Mod](/assets/img/uart/CH341A_3_3VMod.webp)
+![CH341A_3v3_Mod](/assets/img/uart/CH341A_3_3VMod.webp){:loading='lazy'}
 
 **Steps:**
 
