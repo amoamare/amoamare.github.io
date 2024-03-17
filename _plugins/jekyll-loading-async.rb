@@ -21,7 +21,7 @@ module Jekyll
 
     def self.process_tags(html)
       content = Nokogiri.HTML(html)
-      tags = content.css("img[src], iframe[src], object[src], embed[src]")
+      tags = content.css("img[src], iframe[src], obj[src], embed[src]")
       tags.each { |tag| tag["decoding"] = "async" unless tag["decoding"] }
       content.to_html
     end
