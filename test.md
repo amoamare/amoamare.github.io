@@ -6,8 +6,8 @@ permalink: /test
 ---
 
 <details>
-  <summary>Show TPS62822</summary>
+  <summary>View TPS62822</summary>
   
     {% pdf tps62822.pdf %}
-    
+
 </details>
