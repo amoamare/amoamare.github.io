@@ -16,12 +16,12 @@ module Jekyll
     end
 
     def self.process_tags?(html)
-      html.include?("<img") || html.include?("<iframe") || html.include?("<object") || html.include?("<embed") || html.include?("type=\"application/pdf\"")
+      html.include?("<img") || html.include?("<iframe") || html.include?("<object") || html.include?("<embed")
     end
 
     def self.process_tags(html)
       content = Nokogiri.HTML(html)
-      tags = content.css("img[src], iframe[src], obj[src], embed[src]")
+      tags = content.css("img[src], iframe[src], object[data], embed[src]")
       tags.each { |tag| tag["decoding"] = "async" unless tag["decoding"] }
       content.to_html
     end
