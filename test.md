@@ -5,4 +5,9 @@ subtitle: Getting Started with UART for Hardware Diagnosis
 permalink: /test
 ---
 
-{% pdf tps62822.pdf %}
+<details>
+  <summary>Show TPS62822</summary>
+  
+    {% pdf tps62822.pdf %}
+    
+</details>
