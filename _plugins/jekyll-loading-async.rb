@@ -16,7 +16,7 @@ module Jekyll
     end
 
     def self.process_tags?(html)
-      html.include?("<img") || html.include?("<iframe") || html.include?("<object") || html.include?("<embed") || html.include("type=\"application/pdf\"")
+      html.include?("<img") || html.include?("<iframe") || html.include?("<object") || html.include?("<embed") || html.include?("type=\"application/pdf\"")
     end
 
     def self.process_tags(html)
