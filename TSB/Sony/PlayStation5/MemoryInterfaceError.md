@@ -22,7 +22,7 @@ Indicated memory banks failed to communicate or initialize from APU.
     
 *   **Compatibility Problems**: Incompatibility between the APU and the memory modules could lead to communication failures or initialization issues.
 
-#### GDDR6 Memory Bank Refrence Locations EDM-001,002,003 etc
+#### GDDR6 Memory Bank Reference Locations EDM-010,020,030 etc
 {% highlight_img_areas site.data.highlight_areas.EDM001.GDDR6 %}
 {% endhighlight_img_areas %}
 
