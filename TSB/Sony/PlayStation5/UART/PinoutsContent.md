@@ -1,6 +1,7 @@
 ### Table of Contents
 1. [EDM-010 & EDM-020](#edm-010/edm-020)
-2. [EDM-03x+](#edm-03x+)
+2. [EDM-03x](#edm-03x)
+3. [EDM-04x+](#edm-04x+)
 
 ## Pinouts and UART Locations
 
