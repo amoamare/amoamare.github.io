@@ -21,6 +21,7 @@ author: Console Service Tool
 
 navbar-links:
   Resources:
+    - PlayStation 5 UART Tool: "https://www.consoleservicetool.com/apps/uart"
     - PlayStation WiKi: "https://www.psdevwiki.com/"
 
 ################
@@ -255,7 +256,7 @@ date_format: "%B %-d, %Y"
 #################################################################################
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Dever"
+timezone: "America/Toronto"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
